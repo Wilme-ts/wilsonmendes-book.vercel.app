@@ -1,103 +1,77 @@
-import { ShoppingCart, BookOpen, Leaf, Globe, Phone, Mail, MapPin, Star, Quote, CheckCircle2, ArrowRight, BadgeCheck } from "lucide-react";
-              </span>
-              <h4 className="mt-5 text-2xl font-semibold">{plan.name}</h4>
-              <p className="mt-4 text-4xl font-bold">{plan.price}</p>
-              <p className="mt-4 min-h-[78px] leading-7 text-stone-300">{plan.description}</p>
-              <div className="mt-8 inline-flex items-center gap-2 rounded-2xl bg-white px-5 py-3 font-semibold text-stone-950">
-                {plan.cta}
-                <ArrowRight className="h-4 w-4" />
-              </div>
-            </motion.a>
-          ))}
-        </div>
-      </section>
-
-      <section className="border-y border-white/10 bg-gradient-to-r from-emerald-500/10 via-transparent to-amber-500/10">
-        <div className="mx-auto max-w-5xl px-6 py-20 text-center">
-          <p className="text-sm uppercase tracking-[0.3em] text-emerald-400">Acção</p>
-          <h3 className="mt-4 text-3xl font-bold md:text-5xl">
-            Não fique apenas a aplaudir o futuro. Entre em campo.
-          </h3>
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-stone-300">
-            Adquira o livro, partilhe com a sua equipa, ofereça a estudantes, leve para universidades, debates institucionais e salas onde o amanhã começa a ser decidido hoje.
-          </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <a
-              href="https://wa.me/244923716758?text=Ol%C3%A1%2C%20quero%20falar%20sobre%20o%20livro."
-              className="rounded-2xl bg-emerald-500 px-6 py-3 font-semibold text-stone-950"
-            >
-              Falar com o autor
-            </a>
-            <a href="#comprar" className="rounded-2xl border border-white/15 px-6 py-3 font-semibold text-white">
-              Garantir exemplar
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-20">
-        <div className="grid gap-6 md:grid-cols-2">
-          {faqs.map((faq) => (
-            <div key={faq.q} className="rounded-[2rem] border border-white/10 bg-white/5 p-8">
-              <h4 className="text-lg font-semibold">{faq.q}</h4>
-              <p className="mt-4 leading-7 text-stone-300">{faq.a}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section id="contacto" className="mx-auto max-w-7xl px-6 pb-20">
-        <div className="grid gap-10 rounded-[2rem] border border-white/10 bg-white/5 p-8 md:grid-cols-2 md:p-12">
-          <div>
-            <p className="text-sm uppercase tracking-[0.3em] text-emerald-400">Contacto</p>
-            <h3 className="mt-4 text-3xl font-bold">Vamos colocar este livro onde ele deve estar</h3>
-            <p className="mt-6 leading-8 text-stone-300">
-              Esta secção já está pronta para ligar ao teu WhatsApp, email profissional, redes sociais, local do lançamento e formulário real de contacto.
-            </p>
-            <div className="mt-8 space-y-4 text-stone-200">
-              <div className="flex items-center gap-3"><Mail className="h-5 w-5 text-emerald-400" /> wilsonmendes755@gmail.com</div>
-              <div className="flex items-center gap-3"><Phone className="h-5 w-5 text-emerald-400" /> +244 923 716 758</div>
-              <div className="flex items-center gap-3"><MapPin className="h-5 w-5 text-emerald-400" /> Luanda, Angola</div>
-            </div>
-
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a href="https://wa.me/244923716758" className="rounded-2xl bg-emerald-500 px-5 py-3 font-semibold text-stone-950">WhatsApp</a>
-              <a href="mailto:wilsonmendes755@gmail.com" className="rounded-2xl border border-white/15 px-5 py-3 font-semibold text-white">Email</a>
-            </div>
-          </div>
-
-          <form className="space-y-4">
-            <input
-              type="text"
-              placeholder="Seu nome"
-              className="w-full rounded-2xl border border-white/10 bg-stone-900 px-4 py-3 text-white outline-none placeholder:text-stone-500"
-            />
-            <input
-              type="email"
-              placeholder="Seu email"
-              className="w-full rounded-2xl border border-white/10 bg-stone-900 px-4 py-3 text-white outline-none placeholder:text-stone-500"
-            />
-            <textarea
-              placeholder="Escreva a sua mensagem"
-              rows={5}
-              className="w-full rounded-2xl border border-white/10 bg-stone-900 px-4 py-3 text-white outline-none placeholder:text-stone-500"
-            />
-            <button className="w-full rounded-2xl bg-emerald-500 px-5 py-3 font-semibold text-stone-950 transition hover:scale-[1.02]">
-              Enviar mensagem
-            </button>
-          </form>
-        </div>
-      </section>
-
-      <footer className="border-t border-white/10 px-6 py-8 text-center text-sm text-stone-400">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 md:flex-row">
-          <p>© 2026 Wilson Mendes. Todos os direitos reservados.</p>
-          <div className="flex items-center gap-2 text-stone-500">
-            <Star className="h-4 w-4" />
-            <span>Site premium para publicação e venda do livro</span>
-          </div>
-        </div>
-      </footer>
-    </div>
-  );
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Transição Energética em Angola</title>
+<style>
+body{
+font-family: Arial;
+background:#0f172a;
+color:white;
+text-align:center;
+padding:40px;
 }
+.container{
+max-width:800px;
+margin:auto;
+}
+h1{
+color:#22c55e;
+}
+.button{
+display:inline-block;
+padding:15px 25px;
+background:#22c55e;
+color:white;
+text-decoration:none;
+border-radius:8px;
+margin-top:20px;
+font-weight:bold;
+}
+.price{
+font-size:22px;
+margin:15px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Transição Energética em Angola</h1>
+
+<h2>Biocombustíveis: O Segundo Petróleo e a Nova Esperança Verde</h2>
+
+<p>
+Um livro sobre o futuro energético de Angola, o papel dos biocombustíveis
+e a construção de uma nova economia verde.
+</p>
+
+<p class="price">
+Livro físico: <b>15.000 Kz</b><br>
+Edição premium: <b>25.000 Kz</b>
+</p>
+
+<a class="button" href="https://wa.me/244923716758">
+Comprar pelo WhatsApp
+</a>
+
+<br><br>
+
+<h3>Sobre o Autor</h3>
+
+<p>
+Wilson Mendes é geólogo angolano e especialista em integração energética e
+biocombustíveis. Dedica-se ao estudo e promoção de uma transição energética
+justa para Angola.
+</p>
+
+<p>
+📧 wilsonmendes755@gmail.com
+</p>
+
+</div>
+
+</body>
+</html>
