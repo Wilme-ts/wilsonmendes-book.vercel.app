@@ -1,77 +1,438 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt">
 <head>
-<meta charset="UTF-8">
-<title>Transição Energética em Angola</title>
-<style>
-body{
-font-family: Arial;
-background:#0f172a;
-color:white;
-text-align:center;
-padding:40px;
-}
-.container{
-max-width:800px;
-margin:auto;
-}
-h1{
-color:#22c55e;
-}
-.button{
-display:inline-block;
-padding:15px 25px;
-background:#22c55e;
-color:white;
-text-decoration:none;
-border-radius:8px;
-margin-top:20px;
-font-weight:bold;
-}
-.price{
-font-size:22px;
-margin:15px 0;
-}
-</style>
-</head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transição Energética em Angola | Wilson Mendes</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #04122b 0%, #071b3f 100%);
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background: rgba(4, 18, 43, 0.92);
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(8px);
+      z-index: 10;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      font-size: 20px;
+      font-weight: bold;
+      color: #22c55e;
+    }
+
+    .nav-links a {
+      color: #ffffff;
+      text-decoration: none;
+      margin-left: 18px;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: #22c55e;
+    }
+
+    .hero {
+      padding: 70px 0 50px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(34, 197, 94, 0.12);
+      color: #4ade80;
+      border: 1px solid rgba(34, 197, 94, 0.25);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 12px;
+      margin-bottom: 24px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: 46px;
+      color: #22c55e;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: 30px;
+      margin-bottom: 18px;
+    }
+
+    .subtitle {
+      max-width: 800px;
+      margin: 0 auto 26px;
+      font-size: 18px;
+      color: #dbeafe;
+    }
+
+    .quote {
+      margin: 25px auto 30px;
+      max-width: 700px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #f8fafc;
+    }
+
+    .hero-buttons {
+      margin-top: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 10px;
+      font-weight: bold;
+      text-decoration: none;
+      margin: 8px;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: #22c55e;
+      color: #04122b;
+    }
+
+    .btn-primary:hover {
+      background: #16a34a;
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #ffffff;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.08);
+    }
+
+    .section {
+      padding: 60px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 34px;
+      margin-bottom: 16px;
+    }
+
+    .section-text {
+      text-align: center;
+      max-width: 850px;
+      margin: 0 auto 30px;
+      color: #dbeafe;
+      font-size: 17px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 30px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 24px;
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      color: #ffffff;
+      font-size: 22px;
+    }
+
+    .card p {
+      color: #dbeafe;
+      font-size: 15px;
+    }
+
+    .highlight {
+      color: #22c55e;
+      font-weight: bold;
+    }
+
+    .book-cover, .author-photo {
+      width: 100%;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+      background: #0b1733;
+    }
+
+    .prices {
+      margin-top: 24px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .price-note {
+      color: #dbeafe;
+      margin-top: 8px;
+      font-size: 15px;
+    }
+
+    .contact-box {
+      text-align: center;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 30px;
+    }
+
+    .contact-box p {
+      margin: 10px 0;
+      color: #dbeafe;
+    }
+
+    footer {
+      text-align: center;
+      padding: 28px 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      color: #cbd5e1;
+      font-size: 14px;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 900px) {
+      .grid-2,
+      .grid-3,
+      .grid-4 {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      h2 {
+        font-size: 24px;
+      }
+
+      .quote {
+        font-size: 20px;
+      }
+
+      .nav {
+        justify-content: center;
+      }
+
+      .nav-links {
+        text-align: center;
+      }
+
+      .nav-links a {
+        display: inline-block;
+        margin: 8px 10px;
+      }
+    }
+  </style>
+</head>
 <body>
 
-<div class="container">
+  <header>
+    <div class="container nav">
+      <div class="brand">Wilson Mendes</div>
+      <div class="nav-links">
+        <a href="#livro">O Livro</a>
+        <a href="#autor">Autor</a>
+        <a href="#impacto">Impacto</a>
+        <a href="#comprar">Comprar</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </div>
+  </header>
 
-<h1>Transição Energética em Angola</h1>
+  <section class="hero">
+    <div class="container">
+      <div class="badge">Lançamento editorial</div>
+      <h1>Transição Energética em Angola</h1>
+      <h2>Biocombustíveis: O Segundo Petróleo e a Nova Esperança Verde</h2>
+      <p class="subtitle">
+        Um livro pessoal de autor, com visão estratégica sobre o futuro energético de Angola,
+        o papel dos biocombustíveis e a necessidade de o país participar de forma activa nas
+        decisões globais sobre energia, descarbonização e desenvolvimento sustentável.
+      </p>
+      <div class="quote">
+        “O segundo petróleo de Angola pode nascer da terra.”
+      </div>
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="https://wa.me/244923716758" target="_blank">Comprar pelo WhatsApp</a>
+        <a class="btn btn-secondary" href="#livro">Explorar o livro</a>
+      </div>
+    </div>
+  </section>
 
-<h2>Biocombustíveis: O Segundo Petróleo e a Nova Esperança Verde</h2>
+  <section class="section" id="livro">
+    <div class="container grid-2">
+      <div>
+        <img src="https://via.placeholder.com/500x700.png?text=Capa+do+Livro" alt="Capa do livro" class="book-cover">
+      </div>
+      <div>
+        <h2 class="section-title" style="text-align:left;">Sobre o Livro</h2>
+        <p class="section-text" style="text-align:left; margin:0 0 20px 0;">
+          Esta obra nasce da convicção de que Angola não deve assistir à transição energética a partir da bancada.
+          O livro propõe uma leitura clara, estratégica e profundamente nacional sobre como os
+          <span class="highlight">biocombustíveis</span> podem tornar-se um novo eixo de desenvolvimento.
+        </p>
+        <p class="section-text" style="text-align:left; margin:0 0 20px 0;">
+          Mais do que uma análise técnica, este livro é um convite à reflexão, à acção e à construção
+          de uma nova esperança verde com identidade angolana.
+        </p>
+        <div class="prices" id="comprar">
+          Livro físico: 15.000 Kz<br>
+          Edição premium: 25.000 Kz
+        </div>
+        <div class="price-note">
+          Ebook: Brevemente
+        </div>
+        <div style="margin-top:25px;">
+          <a class="btn btn-primary" href="https://wa.me/244923716758" target="_blank">Reservar agora</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<p>
-Um livro sobre o futuro energético de Angola, o papel dos biocombustíveis
-e a construção de uma nova economia verde.
-</p>
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Porque este livro importa</h2>
+      <p class="section-text">
+        Nem toda transição representa progresso. Só é progresso quando traz visão, justiça,
+        inteligência económica e oportunidade real para o povo.
+      </p>
 
-<p class="price">
-Livro físico: <b>15.000 Kz</b><br>
-Edição premium: <b>25.000 Kz</b>
-</p>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Visão para Angola</h3>
+          <p>Uma leitura estratégica sobre o lugar de Angola na nova economia energética global.</p>
+        </div>
+        <div class="card">
+          <h3>Energia e Agricultura</h3>
+          <p>O livro mostra como os biocombustíveis podem ligar produção rural, energia e desenvolvimento.</p>
+        </div>
+        <div class="card">
+          <h3>Futuro e Soberania</h3>
+          <p>Uma reflexão sobre como o país pode decidir o seu futuro com mais autonomia e inteligência.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<a class="button" href="https://wa.me/244923716758">
-Comprar pelo WhatsApp
-</a>
+  <section class="section" id="impacto">
+    <div class="container">
+      <h2 class="section-title">Impacto para Angola</h2>
+      <p class="section-text">
+        O livro não fala apenas de energia. Fala de transformação nacional.
+      </p>
 
-<br><br>
+      <div class="grid-4">
+        <div class="card">
+          <h3>Energia</h3>
+          <p>Diversificação da matriz energética e novas rotas para segurança energética.</p>
+        </div>
+        <div class="card">
+          <h3>Agricultura</h3>
+          <p>Valorização da terra, da produção agrícola e das cadeias locais de valor.</p>
+        </div>
+        <div class="card">
+          <h3>Emprego</h3>
+          <p>Novas oportunidades para jovens, comunidades rurais e quadros técnicos nacionais.</p>
+        </div>
+        <div class="card">
+          <h3>Descarbonização</h3>
+          <p>Contribuição para redução de emissões e desenvolvimento mais sustentável.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<h3>Sobre o Autor</h3>
+  <section class="section" id="autor">
+    <div class="container grid-2">
+      <div>
+        <img src="https://via.placeholder.com/500x650.png?text=Wilson+Mendes" alt="Wilson Mendes" class="author-photo">
+      </div>
+      <div>
+        <h2 class="section-title" style="text-align:left;">Sobre o Autor</h2>
+        <p class="section-text" style="text-align:left; margin:0 0 18px 0;">
+          <strong>Wilson Mendes</strong> é um geólogo angolano e especialista em integração energética e biocombustíveis.
+          Possui mestrado em Prevenção de Riscos Laborais e mestrado em Transição Energética com enfoque em sistemas fotovoltaicos.
+        </p>
+        <p class="section-text" style="text-align:left; margin:0 0 18px 0;">
+          De origens humildes, cresceu no Palanca, onde, com dedicação, disciplina e perseverança,
+          foi construindo o seu percurso académico e profissional.
+        </p>
+        <p class="section-text" style="text-align:left; margin:0;">
+          Actualmente dedica-se a estudar e promover caminhos para uma transição energética justa em Angola,
+          defendendo que o país deve assumir um papel activo nas decisões globais relacionadas com energia,
+          descarbonização e desenvolvimento sustentável.
+        </p>
+      </div>
+    </div>
+  </section>
 
-<p>
-Wilson Mendes é geólogo angolano e especialista em integração energética e
-biocombustíveis. Dedica-se ao estudo e promoção de uma transição energética
-justa para Angola.
-</p>
+  <section class="section" id="contacto">
+    <div class="container">
+      <div class="contact-box">
+        <h2 class="section-title">Contacto</h2>
+        <p>Vamos colocar este livro onde ele deve estar.</p>
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/244923716758" target="_blank" style="color:#4ade80;">+244 923 716 758</a></p>
+        <p><strong>Email:</strong> <a href="mailto:wilsonmendes755@gmail.com" style="color:#4ade80;">wilsonmendes755@gmail.com</a></p>
+        <p><strong>Localização:</strong> Luanda, Angola</p>
+        <div style="margin-top:20px;">
+          <a class="btn btn-primary" href="https://wa.me/244923716758" target="_blank">Falar com o autor</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<p>
-📧 wilsonmendes755@gmail.com
-</p>
-
-</div>
+  <footer>
+    © 2026 Wilson Mendes. Todos os direitos reservados.
+  </footer>
 
 </body>
 </html>
