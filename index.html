@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Transição Energética em Angola</title>
-  <meta name="description" content="Portal sobre transição energética em Angola com notícias, artigos, perguntas e comentários." />
+  <meta name="description" content="Portal angolano sobre transição energética, biocombustíveis, mercado de carbono, hidrogénio verde e debate público." />
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -44,7 +44,7 @@
     header {
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 50;
       background: rgba(4,17,35,0.75);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(255,255,255,0.08);
@@ -76,7 +76,7 @@
     .nav-links a:hover { color: #8bf4a8; }
 
     .hero {
-      padding: 80px 0 50px;
+      padding: 80px 0 55px;
       text-align: center;
     }
 
@@ -175,16 +175,15 @@
       gap: 26px;
     }
 
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-      margin-top: 24px;
-    }
-
     .grid-2-equal {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 22px;
       margin-top: 24px;
     }
@@ -197,9 +196,17 @@
       box-shadow: 0 14px 36px rgba(0,0,0,0.20);
     }
 
-    .card p, .card li {
+    .card p, .card li, .card label {
       color: #dbeafe;
       font-size: 15px;
+    }
+
+    .feature-title {
+      color: #8bf4a8;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
     }
 
     .news-card {
@@ -229,7 +236,7 @@
       font-weight: bold;
     }
 
-    textarea, input {
+    textarea, input, select {
       width: 100%;
       border: 1px solid rgba(255,255,255,0.14);
       background: rgba(255,255,255,0.06);
@@ -266,6 +273,18 @@
       font-size: 13px;
     }
 
+    .admin-box {
+      margin-top: 25px;
+      border-top: 1px solid rgba(255,255,255,0.10);
+      padding-top: 20px;
+    }
+
+    .footer-links a {
+      color: #8bf4a8;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
     footer {
       text-align: center;
       padding: 28px 0;
@@ -277,8 +296,8 @@
 
     @media (max-width: 950px) {
       .grid-2,
-      .grid-3,
-      .grid-2-equal {
+      .grid-2-equal,
+      .grid-3 {
         grid-template-columns: 1fr;
       }
 
@@ -310,6 +329,7 @@
       <div class="nav-links">
         <a href="#inicio">Início</a>
         <a href="#noticias">Notícias</a>
+        <a href="#artigos">Artigos</a>
         <a href="#temas">Temas</a>
         <a href="#comunidade">Comunidade</a>
         <a href="#perguntas">Perguntas</a>
@@ -320,7 +340,7 @@
 
   <section class="hero" id="inicio">
     <div class="container">
-      <div class="badge">Portal de informação e debate</div>
+      <div class="badge">Portal nacional de informação e debate</div>
       <h1>Transição Energética em Angola</h1>
       <p class="subtitle">
         Um espaço digital para acompanhar notícias, publicar reflexões, fazer perguntas
@@ -335,26 +355,29 @@
     </div>
   </section>
 
-  <section class="section" id="sobre">
+  <section class="section">
     <div class="container">
-      <h2 class="section-title">Sobre o Portal</h2>
+      <h2 class="section-title">Missão do Portal</h2>
       <p class="section-text">
-        Inspirado na lógica institucional e temática de plataformas angolanas ligadas ao clima e ao carbono,
-        este portal foi pensado para ser um <span class="highlight">hub nacional de conhecimento e debate</span>
-        sobre transição energética em Angola.
+        Criar uma plataforma angolana de referência para a <span class="highlight">transição energética</span>,
+        reunindo conhecimento, actualidade, opinião e participação pública. Um lugar onde ciência, estratégia,
+        políticas públicas e visão de futuro podem conversar sem ruído.
       </p>
       <div class="grid-3">
         <div class="card">
-          <h3>Notícias</h3>
-          <p>Actualizações sobre política energética, biocombustíveis, mercado de carbono, gás, petróleo de baixo carbono e inovação.</p>
+          <div class="feature-title">Informação</div>
+          <h3>Notícias e análises</h3>
+          <p>Actualizações sobre energia, clima, petróleo de baixo carbono, mercado de carbono, biocombustíveis e inovação.</p>
         </div>
         <div class="card">
-          <h3>Comunidade</h3>
-          <p>Espaço para comentários, perguntas e troca de ideias entre estudantes, especialistas e interessados.</p>
+          <div class="feature-title">Participação</div>
+          <h3>Comunidade activa</h3>
+          <p>Espaço para comentários, perguntas e debate entre estudantes, profissionais, académicos e interessados.</p>
         </div>
         <div class="card">
-          <h3>Conhecimento</h3>
-          <p>Artigos, análises e visão estratégica sobre o papel de Angola na nova economia energética global.</p>
+          <div class="feature-title">Visão</div>
+          <h3>Angola no futuro energético</h3>
+          <p>O portal ajuda a pensar o lugar de Angola na nova economia energética global, com seriedade e identidade nacional.</p>
         </div>
       </div>
     </div>
@@ -362,39 +385,27 @@
 
   <section class="section" id="noticias">
     <div class="container">
-      <h2 class="section-title">Últimas Notícias</h2>
+      <h2 class="section-title">Notícias em Destaque</h2>
       <p class="section-text">
-        Exemplo de secção editorial para notícias e análises sobre a transição energética em Angola.
+        Notícias editáveis por ti, com possibilidade de criar novas publicações no painel abaixo.
       </p>
+      <div class="grid-3" id="newsList"></div>
+    </div>
+  </section>
 
-      <div class="grid-3">
-        <div class="card news-card">
-          <span class="news-tag">Mercado de Carbono</span>
-          <div class="news-date">06 Fevereiro 2026</div>
-          <h3>Mercado de carbono ganha peso no financiamento energético</h3>
-          <p>Angola começa a posicionar o mercado de carbono como instrumento de financiamento e de valorização de projectos ligados à sustentabilidade.</p>
-        </div>
-
-        <div class="card news-card">
-          <span class="news-tag">Biocombustíveis</span>
-          <div class="news-date">Tema estratégico</div>
-          <h3>Biocombustíveis como ponte entre energia e agricultura</h3>
-          <p>O portal pode destacar como os biocombustíveis ligam produção agrícola, desenvolvimento rural, descarbonização e oportunidades de exportação.</p>
-        </div>
-
-        <div class="card news-card">
-          <span class="news-tag">Baixo Carbono</span>
-          <div class="news-date">Inovação e transição</div>
-          <h3>Angola e as novas rotas para energia de menor intensidade carbónica</h3>
-          <p>Debates sobre hidrogénio verde, captura de carbono, combustíveis sustentáveis e diversificação energética podem ganhar aqui uma casa própria.</p>
-        </div>
-      </div>
+  <section class="section" id="artigos">
+    <div class="container">
+      <h2 class="section-title">Artigos e Reflexões</h2>
+      <p class="section-text">
+        Espaço para opinião, ensaios e análises sobre o futuro da energia em Angola.
+      </p>
+      <div class="grid-3" id="articlesList"></div>
     </div>
   </section>
 
   <section class="section" id="temas">
     <div class="container">
-      <h2 class="section-title">Temas do Portal</h2>
+      <h2 class="section-title">Temas Estratégicos</h2>
       <div class="grid-3">
         <div class="card">
           <h3>Biocombustíveis</h3>
@@ -406,7 +417,7 @@
         </div>
         <div class="card">
           <h3>Hidrogénio Verde</h3>
-          <p>Inovação, electrólise, energia renovável, indústria e o papel de Angola na economia energética do futuro.</p>
+          <p>Electrólise, energia renovável, inovação industrial e o papel de Angola no sistema energético do futuro.</p>
         </div>
       </div>
     </div>
@@ -416,7 +427,7 @@
     <div class="container">
       <h2 class="section-title">Comunidade e Comentários</h2>
       <p class="section-text">
-        Aqui podes escrever observações, análises e comentários. Neste protótipo, os comentários ficam guardados no navegador.
+        Aqui podes publicar observações, análises e reações às notícias do portal.
       </p>
 
       <div class="grid-2-equal">
@@ -426,7 +437,7 @@
             <input id="commentName" type="text" placeholder="Seu nome">
           </div>
           <div class="form-group">
-            <textarea id="commentText" placeholder="Escreva o seu comentário sobre a transição energética em Angola"></textarea>
+            <textarea id="commentText" placeholder="Escreva o seu comentário"></textarea>
           </div>
           <button class="btn btn-primary" onclick="addComment()">Publicar comentário</button>
         </div>
@@ -441,14 +452,14 @@
 
   <section class="section" id="perguntas">
     <div class="container">
-      <h2 class="section-title">Perguntas da Comunidade</h2>
+      <h2 class="section-title">Pergunte ao Wilson</h2>
       <p class="section-text">
-        Espaço para quem quiser levantar dúvidas sobre energia, clima, biocombustíveis, carbono ou política energética.
+        Espaço para dúvidas sobre energia, clima, biocombustíveis, mercado de carbono e transição energética em Angola.
       </p>
 
       <div class="grid-2-equal">
         <div class="card">
-          <h3>Fazer uma pergunta</h3>
+          <h3>Enviar pergunta</h3>
           <div class="form-group">
             <input id="questionName" type="text" placeholder="Seu nome">
           </div>
@@ -466,12 +477,51 @@
     </div>
   </section>
 
+  <section class="section" id="admin">
+    <div class="container">
+      <h2 class="section-title">Painel Editorial</h2>
+      <p class="section-text">
+        Aqui podes publicar notícias e artigos diretamente no portal. Neste protótipo, o conteúdo fica guardado no navegador.
+      </p>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>Nova Notícia</h3>
+          <div class="form-group">
+            <input id="newsTitle" type="text" placeholder="Título da notícia">
+          </div>
+          <div class="form-group">
+            <input id="newsCategory" type="text" placeholder="Categoria (ex.: Biocombustíveis)">
+          </div>
+          <div class="form-group">
+            <textarea id="newsText" placeholder="Resumo da notícia"></textarea>
+          </div>
+          <button class="btn btn-primary" onclick="addNews()">Publicar notícia</button>
+        </div>
+
+        <div class="card">
+          <h3>Novo Artigo</h3>
+          <div class="form-group">
+            <input id="articleTitle" type="text" placeholder="Título do artigo">
+          </div>
+          <div class="form-group">
+            <input id="articleAuthor" type="text" placeholder="Autor do artigo">
+          </div>
+          <div class="form-group">
+            <textarea id="articleText" placeholder="Resumo ou introdução do artigo"></textarea>
+          </div>
+          <button class="btn btn-primary" onclick="addArticle()">Publicar artigo</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section" id="contacto">
     <div class="container">
       <div class="card" style="text-align:center;">
         <h2 class="section-title">Contacto</h2>
         <p class="section-text" style="margin-bottom:10px;">
-          Este portal pode ser administrado por ti e evoluir para uma plataforma pública de referência.
+          O portal pode evoluir para uma plataforma pública nacional de referência.
         </p>
         <p><strong>Email:</strong> <a href="mailto:wilsonmendes755@gmail.com" style="color:#8bf4a8;">wilsonmendes755@gmail.com</a></p>
         <p><strong>WhatsApp:</strong> <a href="https://wa.me/244923716758" target="_blank" style="color:#8bf4a8;">+244 923 716 758</a></p>
@@ -480,11 +530,104 @@
   </section>
 
   <footer>
-    © 2026 Transição Energética em Angola — Protótipo inicial do portal
+    <div>© 2026 Transição Energética em Angola</div>
+    <div class="footer-links" style="margin-top:8px;">
+      <a href="#inicio">Início</a>
+      <a href="#noticias">Notícias</a>
+      <a href="#artigos">Artigos</a>
+      <a href="#comunidade">Comunidade</a>
+    </div>
   </footer>
 
   <script>
-    function loadItems(key, targetId, emptyText) {
+    const defaultNews = [
+      {
+        title: "Mercado de carbono ganha espaço na agenda energética",
+        category: "Mercado de Carbono",
+        text: "Angola começa a olhar o mercado de carbono como instrumento de financiamento climático e valorização de projectos sustentáveis.",
+        date: "2026-03-11"
+      },
+      {
+        title: "Biocombustíveis podem ligar energia e agricultura",
+        category: "Biocombustíveis",
+        text: "A produção de biocombustíveis pode criar novas cadeias de valor, apoiar o desenvolvimento rural e impulsionar a diversificação económica.",
+        date: "2026-03-11"
+      },
+      {
+        title: "Transição energética exige estratégia nacional clara",
+        category: "Política Energética",
+        text: "O debate nacional sobre energia precisa integrar descarbonização, desenvolvimento industrial, emprego e soberania.",
+        date: "2026-03-11"
+      }
+    ];
+
+    const defaultArticles = [
+      {
+        title: "O segundo petróleo de Angola pode nascer da terra",
+        author: "Wilson Mendes",
+        text: "Os biocombustíveis podem representar uma nova fronteira estratégica para Angola, ligando energia, agricultura e desenvolvimento.",
+        date: "2026-03-11"
+      },
+      {
+        title: "Por que Angola precisa de debater energia com mais profundidade",
+        author: "Redacção",
+        text: "A transição energética não é apenas um tema técnico. É também económico, social, geopolítico e geracional.",
+        date: "2026-03-11"
+      },
+      {
+        title: "Mercado de carbono e oportunidades para o país",
+        author: "Redacção",
+        text: "Com a estrutura certa, Angola pode transformar reduções de emissões em valor económico e atrair investimento.",
+        date: "2026-03-11"
+      }
+    ];
+
+    function getData(key, fallback) {
+      const stored = JSON.parse(localStorage.getItem(key));
+      if (stored && stored.length) return stored;
+      localStorage.setItem(key, JSON.stringify(fallback));
+      return fallback;
+    }
+
+    function saveData(key, value) {
+      localStorage.setItem(key, JSON.stringify(value));
+    }
+
+    function renderNews() {
+      const news = getData("tea_news", defaultNews);
+      const target = document.getElementById("newsList");
+      target.innerHTML = "";
+      news.slice().reverse().forEach(item => {
+        const div = document.createElement("div");
+        div.className = "card news-card";
+        div.innerHTML = `
+          <span class="news-tag">${item.category}</span>
+          <div class="news-date">${item.date}</div>
+          <h3>${item.title}</h3>
+          <p>${item.text}</p>
+        `;
+        target.appendChild(div);
+      });
+    }
+
+    function renderArticles() {
+      const articles = getData("tea_articles", defaultArticles);
+      const target = document.getElementById("articlesList");
+      target.innerHTML = "";
+      articles.slice().reverse().forEach(item => {
+        const div = document.createElement("div");
+        div.className = "card news-card";
+        div.innerHTML = `
+          <span class="news-tag">Artigo</span>
+          <div class="news-date">${item.author} • ${item.date}</div>
+          <h3>${item.title}</h3>
+          <p>${item.text}</p>
+        `;
+        target.appendChild(div);
+      });
+    }
+
+    function loadFeed(key, targetId, emptyText) {
       const items = JSON.parse(localStorage.getItem(key)) || [];
       const target = document.getElementById(targetId);
       target.innerHTML = "";
@@ -494,7 +637,7 @@
         return;
       }
 
-      items.reverse().forEach(item => {
+      items.slice().reverse().forEach(item => {
         const div = document.createElement("div");
         div.className = "feed-item";
         div.innerHTML = "<strong>" + item.name + "</strong><br><span>" + item.text + "</span><br><span class='muted'>" + item.date + "</span>";
@@ -505,49 +648,87 @@
     function addComment() {
       const name = document.getElementById("commentName").value.trim();
       const text = document.getElementById("commentText").value.trim();
-
       if (!name || !text) {
         alert("Preencha o nome e o comentário.");
         return;
       }
-
       const comments = JSON.parse(localStorage.getItem("tea_comments")) || [];
-      comments.push({
-        name: name,
-        text: text,
-        date: new Date().toLocaleString("pt-PT")
-      });
-
-      localStorage.setItem("tea_comments", JSON.stringify(comments));
+      comments.push({ name, text, date: new Date().toLocaleString("pt-PT") });
+      saveData("tea_comments", comments);
       document.getElementById("commentName").value = "";
       document.getElementById("commentText").value = "";
-      loadItems("tea_comments", "commentsList", "Ainda não há comentários.");
+      loadFeed("tea_comments", "commentsList", "Ainda não há comentários.");
     }
 
     function addQuestion() {
       const name = document.getElementById("questionName").value.trim();
       const text = document.getElementById("questionText").value.trim();
-
       if (!name || !text) {
         alert("Preencha o nome e a pergunta.");
         return;
       }
-
       const questions = JSON.parse(localStorage.getItem("tea_questions")) || [];
-      questions.push({
-        name: name,
-        text: text,
-        date: new Date().toLocaleString("pt-PT")
-      });
-
-      localStorage.setItem("tea_questions", JSON.stringify(questions));
+      questions.push({ name, text, date: new Date().toLocaleString("pt-PT") });
+      saveData("tea_questions", questions);
       document.getElementById("questionName").value = "";
       document.getElementById("questionText").value = "";
-      loadItems("tea_questions", "questionsList", "Ainda não há perguntas.");
+      loadFeed("tea_questions", "questionsList", "Ainda não há perguntas.");
     }
 
-    loadItems("tea_comments", "commentsList", "Ainda não há comentários.");
-    loadItems("tea_questions", "questionsList", "Ainda não há perguntas.");
+    function addNews() {
+      const title = document.getElementById("newsTitle").value.trim();
+      const category = document.getElementById("newsCategory").value.trim();
+      const text = document.getElementById("newsText").value.trim();
+
+      if (!title || !category || !text) {
+        alert("Preencha todos os campos da notícia.");
+        return;
+      }
+
+      const news = JSON.parse(localStorage.getItem("tea_news")) || defaultNews;
+      news.push({
+        title,
+        category,
+        text,
+        date: new Date().toLocaleDateString("pt-PT")
+      });
+
+      saveData("tea_news", news);
+      document.getElementById("newsTitle").value = "";
+      document.getElementById("newsCategory").value = "";
+      document.getElementById("newsText").value = "";
+      renderNews();
+    }
+
+    function addArticle() {
+      const title = document.getElementById("articleTitle").value.trim();
+      const author = document.getElementById("articleAuthor").value.trim();
+      const text = document.getElementById("articleText").value.trim();
+
+      if (!title || !author || !text) {
+        alert("Preencha todos os campos do artigo.");
+        return;
+      }
+
+      const articles = JSON.parse(localStorage.getItem("tea_articles")) || defaultArticles;
+      articles.push({
+        title,
+        author,
+        text,
+        date: new Date().toLocaleDateString("pt-PT")
+      });
+
+      saveData("tea_articles", articles);
+      document.getElementById("articleTitle").value = "";
+      document.getElementById("articleAuthor").value = "";
+      document.getElementById("articleText").value = "";
+      renderArticles();
+    }
+
+    renderNews();
+    renderArticles();
+    loadFeed("tea_comments", "commentsList", "Ainda não há comentários.");
+    loadFeed("tea_questions", "questionsList", "Ainda não há perguntas.");
   </script>
 </body>
 </html>
