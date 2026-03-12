@@ -4,48 +4,36 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Transição Energética em Angola</title>
-  <meta name="description" content="Portal angolano sobre transição energética, biocombustíveis, mercado de carbono, hidrogénio verde e debate público." />
+  <meta name="description" content="Portal angolano sobre transição energética, biocombustíveis, mercado de carbono, hidrogénio verde, artigos científicos e debate público." />
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
       color: #fff;
       line-height: 1.6;
       background:
-        linear-gradient(rgba(4,17,35,0.78), rgba(4,17,35,0.90)),
-        radial-gradient(circle at top right, rgba(47,211,176,0.18), transparent 28%),
-        radial-gradient(circle at bottom left, rgba(125,211,99,0.14), transparent 30%),
-        linear-gradient(180deg, #0f7a67 0%, #0a6e66 26%, #0b4358 58%, #041123 100%);
-      background-attachment: fixed;
-    }
-
-    .pattern {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      opacity: 0.04;
-      background-image:
-        linear-gradient(90deg, rgba(255,255,255,0.10) 1px, transparent 1px),
-        linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px);
-      background-size: 36px 36px;
-      z-index: 0;
+        linear-gradient(rgba(7,17,31,0.88), rgba(7,17,31,0.94)),
+        linear-gradient(135deg, #07111f 0%, #0b4358 38%, #0b2d3c 68%, #07111f 100%);
     }
 
     .container {
       width: 92%;
       max-width: 1180px;
       margin: 0 auto;
-      position: relative;
-      z-index: 1;
     }
 
     .top-strip {
-      background: linear-gradient(90deg, rgba(34,197,94,0.16), rgba(11,67,88,0.18));
+      background: linear-gradient(90deg, rgba(30,203,123,0.22), rgba(245,158,11,0.16));
       border-bottom: 1px solid rgba(255,255,255,0.08);
-      font-size: 13px;
-      color: #dff7ea;
       position: relative;
       z-index: 20;
     }
@@ -55,50 +43,68 @@
       justify-content: space-between;
       align-items: center;
       gap: 16px;
-      padding: 8px 0;
+      padding: 10px 0;
       flex-wrap: wrap;
     }
 
-    .top-strip a {
-      color: #9cf7bc;
+    .top-strip p {
+      color: #f8fafc;
+      font-size: 13px;
+    }
+
+    .top-strip-links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .top-strip-links a {
       text-decoration: none;
+      color: #f8fafc;
+      font-size: 13px;
       font-weight: bold;
     }
 
-    .top-strip a:hover {
-      text-decoration: underline;
+    .top-strip-links a:hover,
+    .nav-links a:hover,
+    .footer-links a:hover {
+      color: #f59e0b;
     }
 
     header {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(4,17,35,0.78);
+      background: rgba(7,17,31,0.82);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(255,255,255,0.08);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.22);
     }
 
     .nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 18px;
-      padding: 14px 0;
+      gap: 16px;
+      padding: 16px 0;
       flex-wrap: wrap;
     }
 
     .brand {
-      font-size: 22px;
-      font-weight: 700;
-      color: #8bf4a8;
+      font-size: 24px;
+      font-weight: 800;
+      color: #ffffff;
       letter-spacing: 0.3px;
+    }
+
+    .brand span {
+      color: #1ecb7b;
     }
 
     .nav-right {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 18px;
       flex-wrap: wrap;
       justify-content: flex-end;
     }
@@ -106,30 +112,26 @@
     .nav-links {
       display: flex;
       flex-wrap: wrap;
-      justify-content: flex-end;
       gap: 10px 16px;
+      justify-content: flex-end;
     }
 
     .nav-links a {
-      color: #fff;
       text-decoration: none;
+      color: #f8fafc;
       font-size: 14px;
       transition: 0.2s ease;
-    }
-
-    .nav-links a:hover {
-      color: #8bf4a8;
     }
 
     .author-box {
       display: flex;
       align-items: center;
       gap: 12px;
-      padding: 8px 12px;
+      padding: 10px 14px;
       border-radius: 18px;
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.10);
-      box-shadow: 0 10px 26px rgba(0,0,0,0.18);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.20);
       max-width: 340px;
     }
 
@@ -138,184 +140,165 @@
       height: 62px;
       border-radius: 50%;
       object-fit: cover;
-      border: 2px solid #8bf4a8;
+      border: 2px solid #f59e0b;
       flex-shrink: 0;
     }
 
     .author-text {
       font-size: 12px;
-      color: #dbeafe;
+      color: #e5eef8;
       line-height: 1.35;
     }
 
     .author-text strong {
-      color: #8bf4a8;
+      color: #f59e0b;
       font-size: 13px;
     }
 
     .hero {
-      padding: 88px 0 60px;
-      text-align: center;
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(7,17,31,0.68), rgba(7,17,31,0.84)),
+        linear-gradient(90deg, rgba(7,17,31,0.92) 0%, rgba(7,17,31,0.58) 48%, rgba(7,17,31,0.82) 100%),
+        url("https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
-    .badge {
+    .hero-content {
+      padding: 90px 0 80px;
+      max-width: 760px;
+    }
+
+    .hero-kicker {
       display: inline-block;
-      background: rgba(34,197,94,0.14);
-      color: #9cf7bc;
-      border: 1px solid rgba(156,247,188,0.24);
+      margin-bottom: 18px;
       padding: 8px 16px;
       border-radius: 999px;
       font-size: 12px;
-      margin-bottom: 22px;
-      letter-spacing: 1px;
+      background: rgba(30,203,123,0.16);
+      color: #d7ffe8;
+      border: 1px solid rgba(30,203,123,0.30);
       text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
-    h1 {
-      font-size: 52px;
-      color: #8bf4a8;
-      margin-bottom: 12px;
-      line-height: 1.1;
+    .hero h1 {
+      font-size: 70px;
+      line-height: 1.02;
+      margin-bottom: 18px;
+      color: #ffffff;
+      font-weight: 800;
     }
 
-    h2 {
-      font-size: 30px;
-      margin-bottom: 14px;
+    .hero h1 span {
+      color: #f59e0b;
     }
 
-    h3 {
-      font-size: 22px;
-      margin-bottom: 10px;
+    .hero p {
+      font-size: 19px;
+      color: #e8f1fb;
+      max-width: 700px;
+      margin-bottom: 28px;
     }
 
-    .subtitle {
-      max-width: 880px;
-      margin: 0 auto 24px;
-      font-size: 18px;
-      color: #e3f3ff;
-    }
-
-    .quote {
-      max-width: 760px;
-      margin: 0 auto 28px;
+    .hero-quote {
       font-size: 24px;
       font-weight: bold;
-      color: #fff;
+      color: #ffffff;
+      margin-bottom: 28px;
     }
 
-    .institutional-note {
-      max-width: 920px;
-      margin: 18px auto 0;
-      color: #cfe6f2;
-      font-size: 15px;
-      text-align: center;
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 26px;
     }
 
     .btn {
       display: inline-block;
       padding: 14px 24px;
-      border-radius: 10px;
+      border-radius: 12px;
       font-weight: bold;
       text-decoration: none;
-      margin: 8px;
-      transition: 0.2s;
       border: none;
       cursor: pointer;
+      transition: 0.2s ease;
+      font-size: 15px;
     }
 
     .btn-primary {
-      background: #22c55e;
-      color: #041123;
+      background: #f59e0b;
+      color: #07111f;
+      box-shadow: 0 10px 24px rgba(245,158,11,0.22);
     }
 
-    .btn-primary:hover { background: #16a34a; }
+    .btn-primary:hover {
+      background: #fbbf24;
+      transform: translateY(-1px);
+    }
 
     .btn-secondary {
-      background: transparent;
-      border: 1px solid rgba(255,255,255,0.22);
-      color: #fff;
+      background: rgba(255,255,255,0.08);
+      color: #ffffff;
+      border: 1px solid rgba(255,255,255,0.18);
     }
 
-    .btn-secondary:hover { background: rgba(255,255,255,0.08); }
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.14);
+    }
 
-    .hero-book {
-      margin-top: 38px;
+    .hero-mini-stats {
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 26px;
-      align-items: center;
-      text-align: left;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+      max-width: 720px;
     }
 
-    .book-card {
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.10);
-      border-radius: 24px;
-      padding: 22px;
-      box-shadow: 0 14px 36px rgba(0,0,0,0.22);
-    }
-
-    .book-cover {
-      width: 100%;
-      max-width: 320px;
+    .hero-stat {
+      padding: 16px;
       border-radius: 18px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.10);
+      backdrop-filter: blur(4px);
+    }
+
+    .hero-stat strong {
       display: block;
-      margin: 0 auto;
-      box-shadow: 0 14px 36px rgba(0,0,0,0.28);
-    }
-
-    .book-tag {
-      display: inline-block;
-      margin-bottom: 12px;
-      padding: 6px 12px;
-      border-radius: 999px;
-      font-size: 12px;
-      background: rgba(139,244,168,0.12);
-      color: #9cf7bc;
-      border: 1px solid rgba(156,247,188,0.18);
-    }
-
-    .book-title {
-      font-size: 30px;
-      color: #fff;
-      margin-bottom: 12px;
-      line-height: 1.2;
-    }
-
-    .book-text {
-      color: #dbeafe;
-      font-size: 16px;
-      margin-bottom: 18px;
+      color: #1ecb7b;
+      font-size: 24px;
+      margin-bottom: 4px;
     }
 
     .section {
-      padding: 72px 0;
+      padding: 78px 0;
     }
 
     .section-title {
       text-align: center;
-      font-size: 34px;
+      font-size: 38px;
       margin-bottom: 14px;
+      color: #ffffff;
     }
 
-    .section-text {
+    .section-subtitle {
       text-align: center;
-      max-width: 900px;
+      max-width: 920px;
       margin: 0 auto 30px;
       color: #dbeafe;
       font-size: 17px;
     }
 
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 26px;
-    }
-
-    .grid-2-equal {
+    .premium-grid-2 {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 22px;
+      gap: 24px;
+      align-items: stretch;
     }
 
     .grid-3 {
@@ -325,42 +308,172 @@
       margin-top: 24px;
     }
 
-    .card {
+    .card,
+    .premium-card,
+    .book-card,
+    .news-card,
+    .paper-item,
+    .feed-item,
+    .hero-book-card {
       background: rgba(255,255,255,0.06);
       border: 1px solid rgba(255,255,255,0.10);
-      border-radius: 20px;
+      border-radius: 22px;
       padding: 24px;
       box-shadow: 0 14px 36px rgba(0,0,0,0.20);
     }
 
-    .card p, .card li, .card label {
+    .card p,
+    .premium-card p,
+    .news-card p {
       color: #dbeafe;
       font-size: 15px;
     }
 
-    .feature-title {
-      color: #8bf4a8;
-      font-size: 14px;
+    .feature-title,
+    .section-kicker,
+    .book-tag,
+    .news-tag,
+    .tag-pill {
+      display: inline-block;
+      width: fit-content;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      background: rgba(30,203,123,0.14);
+      color: #d7ffe8;
+      border: 1px solid rgba(30,203,123,0.24);
       text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 10px;
+      letter-spacing: 0.8px;
+      margin-bottom: 12px;
+    }
+
+    .highlight {
+      color: #f59e0b;
+      font-weight: bold;
+    }
+
+    .hero-book {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 26px;
+      margin-top: 40px;
+      align-items: center;
+    }
+
+    .book-cover {
+      width: 100%;
+      max-width: 320px;
+      display: block;
+      margin: 0 auto;
+      border-radius: 20px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.30);
+    }
+
+    .book-title {
+      font-size: 30px;
+      color: #ffffff;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .book-text {
+      color: #dbeafe;
+      margin-bottom: 16px;
+      font-size: 16px;
+    }
+
+    .expert-layout {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 26px;
+      align-items: center;
+    }
+
+    .expert-photo-large {
+      width: 100%;
+      max-width: 360px;
+      display: block;
+      margin: 0 auto;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.28);
+    }
+
+    .expert-tags,
+    .strategy-tags,
+    .paper-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .map-visual-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .map-node {
+      padding: 18px 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      min-height: 120px;
+    }
+
+    .map-node strong {
+      display: block;
+      color: #f59e0b;
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+
+    .paper-list {
+      display: grid;
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .paper-meta {
+      font-size: 13px;
+      color: #a8c8d8;
+      margin-bottom: 8px;
+    }
+
+    .stat-line {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .stat-box {
+      padding: 16px;
+      border-radius: 18px;
+      text-align: center;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .stat-box strong {
+      display: block;
+      color: #1ecb7b;
+      font-size: 24px;
+      margin-bottom: 4px;
+    }
+
+    .mini-note {
+      margin-top: 16px;
+      color: #b7d4e4;
+      font-size: 14px;
     }
 
     .news-card {
       display: flex;
       flex-direction: column;
-      gap: 12px;
-    }
-
-    .news-tag {
-      display: inline-block;
-      width: fit-content;
-      font-size: 12px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(139,244,168,0.12);
-      color: #9cf7bc;
-      border: 1px solid rgba(156,247,188,0.18);
+      gap: 10px;
     }
 
     .news-date {
@@ -368,12 +481,8 @@
       color: #a8c8d8;
     }
 
-    .highlight {
-      color: #8bf4a8;
-      font-weight: bold;
-    }
-
-    textarea, input, select {
+    textarea,
+    input {
       width: 100%;
       border: 1px solid rgba(255,255,255,0.14);
       background: rgba(255,255,255,0.06);
@@ -399,51 +508,16 @@
     }
 
     .feed-item {
-      padding: 14px 16px;
-      border-radius: 14px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
       margin-top: 12px;
     }
 
     .feed-item strong {
-      color: #8bf4a8;
+      color: #f59e0b;
     }
 
     .muted {
       color: #b7d4e4;
       font-size: 13px;
-    }
-
-    .author-section {
-      padding: 72px 0;
-    }
-
-    .author-profile {
-      display: grid;
-      grid-template-columns: 0.75fr 1.25fr;
-      gap: 26px;
-      align-items: center;
-    }
-
-    .author-photo-large {
-      width: 100%;
-      max-width: 360px;
-      border-radius: 24px;
-      display: block;
-      margin: 0 auto;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.28);
-      border: 1px solid rgba(255,255,255,0.12);
-    }
-
-    .author-bio h2 {
-      margin-bottom: 14px;
-    }
-
-    .author-bio p {
-      color: #dbeafe;
-      font-size: 16px;
-      margin-bottom: 14px;
     }
 
     .social-links {
@@ -476,19 +550,24 @@
       font-size: 16px;
     }
 
-    .footer-links a {
-      color: #8bf4a8;
-      text-decoration: none;
-      margin: 0 8px;
-    }
-
     footer {
       text-align: center;
-      padding: 28px 0;
+      padding: 34px 0;
       border-top: 1px solid rgba(255,255,255,0.08);
-      color: #cbd5e1;
+      color: #dbeafe;
       font-size: 14px;
-      margin-top: 30px;
+      margin-top: 20px;
+      background: rgba(0,0,0,0.18);
+    }
+
+    .footer-links {
+      margin-top: 10px;
+    }
+
+    .footer-links a {
+      color: #f8fafc;
+      text-decoration: none;
+      margin: 0 8px;
     }
 
     @media (max-width: 1050px) {
@@ -503,17 +582,23 @@
     }
 
     @media (max-width: 950px) {
-      .grid-2,
-      .grid-2-equal,
+      .premium-grid-2,
       .grid-3,
       .hero-book,
-      .author-profile {
+      .expert-layout,
+      .map-visual-grid,
+      .stat-line,
+      .hero-mini-stats {
         grid-template-columns: 1fr;
       }
 
-      h1 { font-size: 36px; }
-      h2 { font-size: 25px; }
-      .quote { font-size: 20px; }
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .hero {
+        min-height: auto;
+      }
 
       .nav-right,
       .nav-links {
@@ -524,17 +609,8 @@
         max-width: 100%;
       }
 
-      .hero {
-        padding-top: 70px;
-      }
-
-      .hero-book,
-      .author-profile {
-        text-align: center;
-      }
-
-      .author-bio h2 {
-        text-align: center !important;
+      .hero-content {
+        padding: 70px 0 60px;
       }
     }
 
@@ -544,249 +620,53 @@
         text-align: center;
       }
 
-      .author-text {
-        font-size: 12px;
+      .top-strip .container {
+        justify-content: center;
+        text-align: center;
       }
 
       .brand {
         text-align: center;
       }
 
-      .top-strip .container {
-        justify-content: center;
-        text-align: center;
-      }
-
       .book-title {
         font-size: 24px;
       }
+
+      .section-title {
+        font-size: 30px;
+      }
     }
-    .badge-mini{
-display:inline-block;
-padding:7px 12px;
-border-radius:999px;
-font-size:12px;
-background:rgba(139,244,168,0.12);
-color:#9cf7bc;
-border:1px solid rgba(156,247,188,0.18);
-}
-
-.section-energy{
-margin-top:80px;
-}
-
-.section-energy h2{
-font-size:32px;
-margin-bottom:20px;
-}
-    .expert-section,
-.energy-map-section,
-.science-section,
-.strategy-section {
-  padding: 78px 0;
-}
-
-.premium-intro {
-  text-align: center;
-  max-width: 920px;
-  margin: 0 auto 30px;
-  color: #dbeafe;
-  font-size: 17px;
-}
-
-.premium-grid-2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-}
-
-.premium-card {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.10);
-  border-radius: 22px;
-  padding: 26px;
-  box-shadow: 0 14px 36px rgba(0,0,0,0.20);
-}
-
-.premium-card h3 {
-  margin-bottom: 12px;
-}
-
-.premium-card p {
-  color: #dbeafe;
-  font-size: 15px;
-  margin-bottom: 14px;
-}
-
-.section-kicker {
-  display: inline-block;
-  margin-bottom: 12px;
-  padding: 6px 12px;
-  border-radius: 999px;
-  font-size: 12px;
-  background: rgba(139,244,168,0.12);
-  color: #9cf7bc;
-  border: 1px solid rgba(156,247,188,0.18);
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-}
-
-.expert-layout {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 26px;
-  align-items: center;
-}
-
-.expert-photo-large {
-  width: 100%;
-  max-width: 360px;
-  display: block;
-  margin: 0 auto;
-  border-radius: 24px;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.28);
-  border: 1px solid rgba(255,255,255,0.12);
-}
-
-.expert-tags,
-.strategy-tags,
-.paper-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 16px;
-}
-
-.tag-pill {
-  display: inline-block;
-  padding: 7px 12px;
-  border-radius: 999px;
-  font-size: 12px;
-  background: rgba(139,244,168,0.12);
-  color: #9cf7bc;
-  border: 1px solid rgba(156,247,188,0.18);
-}
-
-.map-visual-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
-  margin-top: 18px;
-}
-
-.map-node {
-  padding: 18px 16px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.08);
-  min-height: 120px;
-}
-
-.map-node strong {
-  display: block;
-  color: #8bf4a8;
-  margin-bottom: 8px;
-  font-size: 15px;
-}
-
-.paper-list {
-  display: grid;
-  gap: 16px;
-  margin-top: 18px;
-}
-
-.paper-item {
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
-.paper-meta {
-  font-size: 13px;
-  color: #a8c8d8;
-  margin-bottom: 8px;
-}
-
-.stat-line {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-  margin-top: 22px;
-}
-
-.stat-box {
-  padding: 16px;
-  border-radius: 18px;
-  text-align: center;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
-.stat-box strong {
-  display: block;
-  color: #8bf4a8;
-  font-size: 22px;
-  margin-bottom: 4px;
-}
-
-.mini-note {
-  margin-top: 16px;
-  color: #b7d4e4;
-  font-size: 14px;
-}
-
-.premium-divider {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.16), transparent);
-  margin: 10px 0 0;
-}
-
-.footer-links a:hover,
-.nav-links a:hover {
-  text-shadow: 0 0 14px rgba(139,244,168,0.35);
-}
-
-@media (max-width: 950px) {
-  .premium-grid-2,
-  .expert-layout,
-  .map-visual-grid,
-  .stat-line {
-    grid-template-columns: 1fr;
-  }
-}
   </style>
 </head>
 <body>
-  <div class="pattern"></div>
-
   <div class="top-strip">
     <div class="container">
-      <div>Plataforma angolana de reflexão, informação e debate sobre o futuro energético nacional.</div>
-      <div>
-        <div>
-  <a href="#sobre-wilson">Sobre o autor</a>
-  <a href="#livro">Livro em destaque</a>
-  <a href="#linhas-estrategicas">Estratégia</a>
-  <a href="#perfil-especialista">Especialista</a>
-  <a href="#mapa-energetico">Mapa</a>
-  <a href="#artigos-cientificos">Ciência</a>
-</div>
+      <p>Plataforma angolana de reflexão, informação e debate sobre o futuro energético nacional.</p>
+      <div class="top-strip-links">
+        <a href="#livro">Livro</a>
+        <a href="#linhas-estrategicas">Estratégia</a>
+        <a href="#perfil-especialista">Especialista</a>
+        <a href="#mapa-energetico">Mapa</a>
+        <a href="#artigos-cientificos">Ciência</a>
+      </div>
     </div>
   </div>
 
   <header>
     <div class="container nav">
-      <div class="brand">Transição Energética em Angola</div>
+      <div class="brand">Transição Energética <span>em Angola</span></div>
 
       <div class="nav-right">
         <div class="nav-links">
           <a href="#inicio">Início</a>
+          <a href="#livro">Livro</a>
           <a href="#noticias">Notícias</a>
-          <a href="#artigos">Artigos</a>
-          <a href="#temas">Temas</a>
+          <a href="#linhas-estrategicas">Estratégia</a>
+          <a href="#perfil-especialista">Especialista</a>
+          <a href="#mapa-energetico">Mapa</a>
+          <a href="#artigos-cientificos">Ciência</a>
           <a href="#comunidade">Comunidade</a>
-          <a href="#perguntas">Perguntas</a>
           <a href="#contacto">Contacto</a>
         </div>
 
@@ -794,7 +674,7 @@ margin-bottom:20px;
           <img src="_MSS7974.jpg" alt="Wilson Mendes" class="author-img" />
           <div class="author-text">
             <strong>Wilson Mendes</strong><br>
-            Geólogo e especialista em transição energética e biocombustíveis, com foco em descarbonização, inovação e futuro sustentável para Angola.
+            Geólogo e especialista em transição energética, biocombustíveis e desenvolvimento sustentável.
           </div>
         </div>
       </div>
@@ -803,72 +683,57 @@ margin-bottom:20px;
 
   <section class="hero" id="inicio">
     <div class="container">
-      <div class="badge">Portal nacional de informação e debate</div>
-      <h1>Transição Energética em Angola</h1>
-      <p class="subtitle">
-        Um espaço digital para acompanhar notícias, publicar reflexões, fazer perguntas
-        e construir debate sério sobre biocombustíveis, mercado de carbono, hidrogénio verde,
-        descarbonização e o futuro energético de Angola.
-      </p>
-      <div class="quote">
-        “Informar, debater e preparar Angola para a nova era da energia.”
-      </div>
-
-      <a class="btn btn-primary" href="#noticias">Ver notícias</a>
-      <a class="btn btn-secondary" href="#comunidade">Entrar na comunidade</a>
-
-      <p class="institutional-note">
-        Um portal pensado para ligar ciência, estratégia, participação pública e visão nacional
-        num momento em que a energia redefine o futuro de Angola.
-      </p>
-
-      <div class="hero-book" id="livro">
-        <div class="book-card">
-          <img src="capa-livro.jpg" alt="Capa do livro Biocombustíveis" class="book-cover" />
+      <div class="hero-content">
+        <span class="hero-kicker">Portal nacional de energia e futuro</span>
+        <h1>TRANSIÇÃO ENERGÉTICA <span>EM ANGOLA</span></h1>
+        <p>
+          Um espaço digital para acompanhar notícias, divulgar ideias, publicar reflexões
+          e construir debate sério sobre biocombustíveis, mercado de carbono, hidrogénio verde,
+          descarbonização e desenvolvimento sustentável em Angola.
+        </p>
+        <div class="hero-quote">
+          “Informar, debater e preparar Angola para a nova era da energia.”
         </div>
 
-        <div class="book-card">
-          <span class="book-tag">Livro em destaque</span>
-          <h2 class="book-title">Biocombustíveis: o Segundo Petróleo e a Nova Esperança Verde</h2>
-          <p class="book-text">
-            Uma reflexão estratégica sobre o papel dos biocombustíveis no futuro de Angola,
-            ligando energia, agricultura, desenvolvimento rural, descarbonização e soberania.
-          </p>
-          <p class="book-text">
-            O livro propõe uma leitura nacional sobre transição energética com identidade própria,
-            mostrando que o futuro também pode nascer da terra, da ciência e da visão.
-          </p>
-          <a class="btn btn-primary" href="#contacto">Saber mais</a>
-          <a class="btn btn-secondary" href="#sobre-wilson">Conhecer o autor</a>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#noticias">Explorar portal</a>
+          <a class="btn btn-secondary" href="https://wa.me/244923716758" target="_blank" rel="noopener noreferrer">Falar com Wilson</a>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title">Missão do Portal</h2>
-      <p class="section-text">
-        Criar uma plataforma angolana de referência para a <span class="highlight">transição energética</span>,
-        reunindo conhecimento, actualidade, opinião e participação pública. Um lugar onde ciência, estratégia,
-        políticas públicas e visão de futuro podem conversar sem ruído.
-      </p>
+        <div class="hero-mini-stats">
+          <div class="hero-stat">
+            <strong>4+</strong>
+            Eixos estratégicos do portal
+          </div>
+          <div class="hero-stat">
+            <strong>1</strong>
+            Visão nacional integrada
+          </div>
+          <div class="hero-stat">
+            <strong>100%</strong>
+            Foco em Angola
+          </div>
+        </div>
 
-      <div class="grid-3">
-        <div class="card">
-          <div class="feature-title">Informação</div>
-          <h3>Notícias e análises</h3>
-          <p>Actualizações sobre energia, clima, petróleo de baixo carbono, mercado de carbono, biocombustíveis e inovação.</p>
-        </div>
-        <div class="card">
-          <div class="feature-title">Participação</div>
-          <h3>Comunidade activa</h3>
-          <p>Espaço para comentários, perguntas e debate entre estudantes, profissionais, académicos e interessados.</p>
-        </div>
-        <div class="card">
-          <div class="feature-title">Visão</div>
-          <h3>Angola no futuro energético</h3>
-          <p>O portal ajuda a pensar o lugar de Angola na nova economia energética global, com seriedade e identidade nacional.</p>
+        <div class="hero-book" id="livro">
+          <div class="hero-book-card">
+            <img src="capa-livro.jpg" alt="Capa do livro" class="book-cover" />
+          </div>
+
+          <div class="hero-book-card">
+            <span class="book-tag">Livro em destaque</span>
+            <h2 class="book-title">Biocombustíveis: o Segundo Petróleo e a Nova Esperança Verde</h2>
+            <p class="book-text">
+              Uma reflexão estratégica sobre o papel dos biocombustíveis no futuro de Angola,
+              ligando energia, agricultura, desenvolvimento rural, descarbonização e soberania.
+            </p>
+            <p class="book-text">
+              O livro propõe uma leitura nacional da transição energética, mostrando que o futuro
+              também pode nascer da terra, da ciência e da visão.
+            </p>
+            <a class="btn btn-primary" href="#perfil-especialista">Conhecer o autor</a>
+            <a class="btn btn-secondary" href="#contacto">Saber mais</a>
+          </div>
         </div>
       </div>
     </div>
@@ -877,129 +742,94 @@ margin-bottom:20px;
   <section class="section" id="noticias">
     <div class="container">
       <h2 class="section-title">Notícias em Destaque</h2>
-      <p class="section-text">
-        Notícias editáveis por ti, com possibilidade de criar novas publicações no painel abaixo.
+      <p class="section-subtitle">
+        Actualizações sobre energia, clima, inovação, biocombustíveis, mercado de carbono e futuro energético de Angola.
       </p>
+
       <div class="grid-3" id="newsList"></div>
     </div>
   </section>
 
-  <section class="section" id="artigos">
+  <section class="section" id="linhas-estrategicas">
     <div class="container">
-      <h2 class="section-title">Artigos e Reflexões</h2>
-      <p class="section-text">
-        Espaço para opinião, ensaios e análises sobre o futuro da energia em Angola.
+      <h2 class="section-title">Linhas Estratégicas para Angola</h2>
+      <p class="section-subtitle">
+        A transição energética angolana não deve ser vista como moda passageira, mas como construção estratégica de valor,
+        soberania e futuro económico.
       </p>
-      <div class="grid-3" id="articlesList"></div>
-    </div>
-  </section>
 
-  <section class="section" id="temas">
-    <div class="container">
-      <h2 class="section-title">Temas Estratégicos</h2>
-      <div class="grid-3">
-        <div class="card">
-          <h3>Biocombustíveis</h3>
-          <p>Etanol, biodiesel, SAF, cadeias agrícolas, desenvolvimento rural e o conceito do “segundo petróleo”.</p>
+      <div class="premium-grid-2">
+        <div class="premium-card">
+          <span class="section-kicker">Visão Estratégica</span>
+          <h3>Do petróleo ao futuro integrado</h3>
+          <p>
+            Angola pode transformar a sua experiência em petróleo e gás numa base sólida para entrar com
+            mais maturidade nos mercados do carbono, dos biocombustíveis, das energias renováveis e da indústria verde.
+          </p>
+          <div class="strategy-tags">
+            <span class="tag-pill">Diversificação</span>
+            <span class="tag-pill">Descarbonização</span>
+            <span class="tag-pill">Indústria</span>
+            <span class="tag-pill">Soberania</span>
+          </div>
         </div>
-        <div class="card">
-          <h3>Mercado de Carbono</h3>
-          <p>Créditos de carbono, projectos de baixo carbono, financiamento climático e oportunidades para Angola.</p>
-        </div>
-        <div class="card">
-          <h3>Hidrogénio Verde</h3>
-          <p>Electrólise, energia renovável, inovação industrial e o papel de Angola no sistema energético do futuro.</p>
+
+        <div class="premium-card">
+          <span class="section-kicker">Prioridades</span>
+          <h3>Quatro eixos de construção</h3>
+          <p>• energia com valor económico</p>
+          <p>• agricultura ligada à bioenergia</p>
+          <p>• mercado de carbono com credibilidade</p>
+          <p>• formação técnica para novas gerações</p>
+          <div class="mini-note">
+            O futuro energético não se improvisa. Estrutura-se, regula-se e executa-se.
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="comunidade">
+  <section class="section" id="perfil-especialista">
     <div class="container">
-      <h2 class="section-title">Comunidade e Comentários</h2>
-      <p class="section-text">
-        Aqui podes publicar observações, análises e reações às notícias do portal.
+      <h2 class="section-title">Perfil do Especialista</h2>
+      <p class="section-subtitle">
+        Uma presença técnica e estratégica dedicada à transição energética, às geociências e ao desenvolvimento sustentável de Angola.
       </p>
 
-      <div class="grid-2-equal">
-        <div class="card">
-          <h3>Deixar comentário</h3>
-          <div class="form-group">
-            <input id="commentName" type="text" placeholder="Seu nome">
-          </div>
-          <div class="form-group">
-            <textarea id="commentText" placeholder="Escreva o seu comentário"></textarea>
-          </div>
-          <button class="btn btn-primary" onclick="addComment()">Publicar comentário</button>
-        </div>
-
-        <div class="card">
-          <h3>Comentários publicados</h3>
-          <div id="commentsList"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="perguntas">
-    <div class="container">
-      <h2 class="section-title">Pergunte ao Wilson</h2>
-      <p class="section-text">
-        Espaço para dúvidas sobre energia, clima, biocombustíveis, mercado de carbono e transição energética em Angola.
-      </p>
-
-      <div class="grid-2-equal">
-        <div class="card">
-          <h3>Enviar pergunta</h3>
-          <div class="form-group">
-            <input id="questionName" type="text" placeholder="Seu nome">
-          </div>
-          <div class="form-group">
-            <textarea id="questionText" placeholder="Escreva a sua pergunta"></textarea>
-          </div>
-          <button class="btn btn-primary" onclick="addQuestion()">Enviar pergunta</button>
-        </div>
-
-        <div class="card">
-          <h3>Perguntas recebidas</h3>
-          <div id="questionsList"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="author-section" id="sobre-wilson">
-    <div class="container">
-      <div class="card author-profile">
+      <div class="premium-card expert-layout">
         <div>
-          <img src="_MSS7974.jpg" alt="Wilson Mendes" class="author-photo-large" />
+          <img src="_MSS7974.jpg" alt="Wilson Mendes" class="expert-photo-large" />
         </div>
 
-        <div class="author-bio">
-          <h2 class="section-title" style="text-align:left; margin-bottom:12px;">Sobre Wilson Mendes</h2>
-
+        <div>
+          <span class="section-kicker">Especialista</span>
+          <h3>Wilson Mendes</h3>
           <p>
-            Wilson Mendes é geólogo e especialista em transição energética e biocombustíveis,
-            com trabalho orientado para descarbonização, inovação energética e desenvolvimento sustentável em Angola.
+            Geólogo e especialista em transição energética e biocombustíveis, com trabalho orientado para descarbonização,
+            integração energética, inovação e visão estratégica.
+          </p>
+          <p>
+            A sua actuação cruza ciência, planeamento e compromisso nacional, defendendo que Angola deve participar
+            activamente nas decisões que moldam o novo mapa energético global.
+          </p>
+          <p>
+            Este portal funciona como espaço de reflexão, debate técnico e divulgação pública sobre energia,
+            clima, mercado de carbono, biocombustíveis e oportunidades para o país.
           </p>
 
-          <p>
-            A sua visão cruza ciência, estratégia e compromisso nacional, defendendo que Angola
-            deve participar de forma activa nas decisões que moldam o novo mapa energético global.
-          </p>
-
-          <p>
-            Este portal nasce como espaço de informação, reflexão e construção colectiva,
-            reunindo temas como mercado de carbono, hidrogénio verde, biocombustíveis,
-            política energética, desenvolvimento e futuro.
-          </p>
+          <div class="expert-tags">
+            <span class="tag-pill">Geociências</span>
+            <span class="tag-pill">Biocombustíveis</span>
+            <span class="tag-pill">Mercado de Carbono</span>
+            <span class="tag-pill">Descarbonização</span>
+            <span class="tag-pill">Transição Energética</span>
+          </div>
 
           <div class="social-links">
             <a class="social-btn" href="https://www.linkedin.com/in/wilson-mendes-b29a2089/" target="_blank" rel="noopener noreferrer">
-  <span class="social-icon">🔗</span>
-  <span>LinkedIn</span>
-</a>
-
+              <span class="social-icon">🔗</span>
+              <span>LinkedIn</span>
+            </a>
             <a class="social-btn" href="https://wa.me/244923716758" target="_blank" rel="noopener noreferrer">
               <span class="social-icon">📱</span>
               <span>WhatsApp</span>
@@ -1009,243 +839,176 @@ margin-bottom:20px;
       </div>
     </div>
   </section>
-<section class="strategy-section" id="linhas-estrategicas">
-  <div class="container">
-    <h2 class="section-title">Linhas Estratégicas para Angola</h2>
-    <p class="premium-intro">
-      A transição energética angolana não deve ser pensada como ruptura cega, mas como
-      evolução inteligente: preservar valor, diversificar a economia e construir novas
-      cadeias de desenvolvimento com identidade nacional.
-    </p>
 
-    <div class="premium-grid-2">
-      <div class="premium-card">
-        <span class="section-kicker">Visão Estratégica</span>
-        <h3>Do petróleo ao futuro integrado</h3>
-        <p>
-          Angola pode transformar a sua experiência em petróleo e gás numa base de força
-          para entrar com mais maturidade nos mercados do carbono, dos biocombustíveis,
-          das energias renováveis e da indústria verde.
-        </p>
-        <div class="strategy-tags">
-          <span class="tag-pill">Diversificação</span>
-          <span class="tag-pill">Descarbonização</span>
-          <span class="tag-pill">Indústria</span>
-          <span class="tag-pill">Soberania</span>
-        </div>
-      </div>
+  <section class="section" id="mapa-energetico">
+    <div class="container">
+      <h2 class="section-title">Mapa Energético de Angola</h2>
+      <p class="section-subtitle">
+        Uma leitura estratégica do país como sistema energético em transformação, onde território, recursos,
+        ciência e política pública precisam conversar.
+      </p>
 
-      <div class="premium-card">
-        <span class="section-kicker">Prioridades</span>
-        <h3>Quatro eixos de construção</h3>
-        <p>• energia com valor económico</p>
-        <p>• agricultura ligada à bioenergia</p>
-        <p>• mercado de carbono com credibilidade</p>
-        <p>• formação técnica para novas gerações</p>
-        <div class="mini-note">
-          O futuro energético não se improvisa. Estrutura-se, regula-se e executa-se.
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="expert-section" id="perfil-especialista">
-  <div class="container">
-    <h2 class="section-title">Perfil do Especialista</h2>
-    <p class="premium-intro">
-      Uma liderança técnica voltada para energia, geociências e desenvolvimento sustentável,
-      com foco na construção de caminhos concretos para Angola.
-    </p>
-
-    <div class="premium-card expert-layout">
-      <div>
-        <img src="_MSS7974.jpg" alt="Wilson Mendes" class="expert-photo-large" />
-      </div>
-
-      <div>
-        <span class="section-kicker">Especialista</span>
-        <h3>Wilson Mendes</h3>
-        <p>
-          Geólogo e especialista em transição energética e biocombustíveis, com trabalho
-          orientado para descarbonização, integração energética, inovação e visão estratégica.
-        </p>
-        <p>
-          A sua actuação cruza ciência, planeamento e compromisso nacional, defendendo que
-          Angola deve ocupar um lugar activo nas decisões que moldam o futuro da energia.
-        </p>
-        <p>
-          Este portal funciona como espaço de reflexão, debate técnico e divulgação pública
-          sobre energia, clima, mercado de carbono, biocombustíveis e novas oportunidades
-          para o país.
-        </p>
-
-        <div class="expert-tags">
-          <span class="tag-pill">Geociências</span>
-          <span class="tag-pill">Biocombustíveis</span>
-          <span class="tag-pill">Mercado de Carbono</span>
-          <span class="tag-pill">Descarbonização</span>
-          <span class="tag-pill">Transição Energética</span>
-        </div>
-
-        <div class="social-links">
-          <a class="social-btn" href="https://www.linkedin.com/in/wilson-mendes-b29a2089/" target="_blank" rel="noopener noreferrer">
-            <span class="social-icon">🔗</span>
-            <span>LinkedIn</span>
-          </a>
-          <a class="social-btn" href="https://wa.me/244923716758" target="_blank" rel="noopener noreferrer">
-            <span class="social-icon">📱</span>
-            <span>WhatsApp</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="energy-map-section" id="mapa-energetico">
-  <div class="container">
-    <h2 class="section-title">Mapa Energético de Angola</h2>
-    <p class="premium-intro">
-      Uma leitura estratégica do país como sistema energético em transformação, onde
-      território, recursos, ciência e política pública precisam conversar.
-    </p>
-
-    <div class="premium-grid-2">
-      <div class="premium-card">
-        <span class="section-kicker">Leitura Territorial</span>
-        <h3>Principais frentes energéticas</h3>
-        <div class="map-visual-grid">
-          <div class="map-node">
-            <strong>Offshore e Onshore</strong>
-            Produção petrolífera, gás natural, infraestruturas e bacias sedimentares estratégicas.
-          </div>
-          <div class="map-node">
-            <strong>Corredor Solar</strong>
-            Expansão de soluções renováveis, mini-redes e produção distribuída.
-          </div>
-          <div class="map-node">
-            <strong>Bioenergia</strong>
-            Potencial para etanol, biomassa, cadeias agrícolas e desenvolvimento rural.
-          </div>
-          <div class="map-node">
-            <strong>Nova Economia</strong>
-            Hidrogénio verde, créditos de carbono e novos fluxos de investimento sustentável.
+      <div class="premium-grid-2">
+        <div class="premium-card">
+          <span class="section-kicker">Leitura Territorial</span>
+          <h3>Principais frentes energéticas</h3>
+          <div class="map-visual-grid">
+            <div class="map-node">
+              <strong>Offshore e Onshore</strong>
+              Produção petrolífera, gás natural, infraestruturas e bacias sedimentares estratégicas.
+            </div>
+            <div class="map-node">
+              <strong>Corredor Solar</strong>
+              Expansão de soluções renováveis, mini-redes e produção distribuída.
+            </div>
+            <div class="map-node">
+              <strong>Bioenergia</strong>
+              Potencial para etanol, biomassa, cadeias agrícolas e desenvolvimento rural.
+            </div>
+            <div class="map-node">
+              <strong>Nova Economia</strong>
+              Hidrogénio verde, créditos de carbono e novos fluxos de investimento sustentável.
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="premium-card">
-        <span class="section-kicker">Integração</span>
-        <h3>Energia, território e futuro</h3>
-        <p>
-          O mapa energético de Angola já não pode ser lido apenas pela lente tradicional.
-          É preciso cruzar petróleo, gás, renováveis, agricultura, clima e indústria numa
-          estratégia integrada.
-        </p>
-        <p>
-          Numa fase seguinte, esta área pode evoluir para um mapa interactivo com projectos,
-          localizações-chave e corredores de desenvolvimento energético.
-        </p>
+        <div class="premium-card">
+          <span class="section-kicker">Integração</span>
+          <h3>Energia, território e futuro</h3>
+          <p>
+            O mapa energético de Angola já não pode ser lido apenas pela lente tradicional.
+            É preciso cruzar petróleo, gás, renováveis, agricultura, clima e indústria numa estratégia integrada.
+          </p>
+          <p>
+            Numa fase seguinte, esta área poderá evoluir para um mapa interactivo com projectos,
+            localizações-chave e corredores de desenvolvimento energético.
+          </p>
 
-        <div class="stat-line">
-          <div class="stat-box">
-            <strong>4</strong>
-            Frentes
-          </div>
-          <div class="stat-box">
-            <strong>1</strong>
-            Visão nacional
-          </div>
-          <div class="stat-box">
-            <strong>100%</strong>
-            Foco estratégico
+          <div class="stat-line">
+            <div class="stat-box">
+              <strong>4</strong>
+              Frentes
+            </div>
+            <div class="stat-box">
+              <strong>1</strong>
+              Visão nacional
+            </div>
+            <div class="stat-box">
+              <strong>100%</strong>
+              Foco estratégico
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="science-section" id="artigos-cientificos">
-  <div class="container">
-    <h2 class="section-title">Artigos Científicos</h2>
-    <p class="premium-intro">
-      Uma área pensada para textos técnicos, análises especializadas e reflexões com base
-      científica sobre energia, clima e desenvolvimento sustentável em Angola.
-    </p>
+  <section class="section" id="artigos-cientificos">
+    <div class="container">
+      <h2 class="section-title">Artigos Científicos</h2>
+      <p class="section-subtitle">
+        Uma área pensada para textos técnicos, análises especializadas e reflexões com base científica
+        sobre energia, clima e desenvolvimento sustentável em Angola.
+      </p>
 
-    <div class="premium-grid-2">
-      <div class="premium-card">
-        <span class="section-kicker">Publicações</span>
-        <h3>Linhas científicas prioritárias</h3>
-        <p>
-          Esta secção acolhe conteúdos mais estruturados, incluindo notas técnicas,
-          ensaios especializados, reflexões estratégicas e textos de base científica.
-        </p>
+      <div class="premium-grid-2">
+        <div class="premium-card">
+          <span class="section-kicker">Publicações</span>
+          <h3>Linhas científicas prioritárias</h3>
+          <p>
+            Esta secção acolhe conteúdos mais estruturados, incluindo notas técnicas, ensaios especializados,
+            reflexões estratégicas e textos de base científica.
+          </p>
 
-        <div class="paper-tags">
-          <span class="tag-pill">GHG</span>
-          <span class="tag-pill">Biocombustíveis</span>
-          <span class="tag-pill">Carbono</span>
-          <span class="tag-pill">Hidrogénio Verde</span>
-          <span class="tag-pill">Política Energética</span>
-        </div>
-
-        <div class="mini-note">
-          Em fase seguinte, esta área poderá incluir PDF, DOI, anexos e ligação a repositórios técnicos.
-        </div>
-      </div>
-
-      <div class="premium-card">
-        <span class="section-kicker">Em Destaque</span>
-        <h3>Textos base do portal</h3>
-
-        <div class="paper-list">
-          <div class="paper-item">
-            <div class="paper-meta">Wilson Mendes • Biocombustíveis</div>
-            <h3>Biocombustíveis como segundo petróleo estratégico</h3>
-            <p>
-              Uma leitura sobre a capacidade de Angola ligar energia, agricultura e desenvolvimento
-              rural numa nova lógica de valor.
-            </p>
+          <div class="paper-tags">
+            <span class="tag-pill">GHG</span>
+            <span class="tag-pill">Biocombustíveis</span>
+            <span class="tag-pill">Carbono</span>
+            <span class="tag-pill">Hidrogénio Verde</span>
+            <span class="tag-pill">Política Energética</span>
           </div>
 
-          <div class="paper-item">
-            <div class="paper-meta">Nota Técnica • Carbono</div>
-            <h3>Mercado de carbono e oportunidades nacionais</h3>
-            <p>
-              Enquadramento das possibilidades institucionais, económicas e climáticas para Angola.
-            </p>
+          <div class="mini-note">
+            Em fase seguinte, esta área poderá incluir PDF, DOI, anexos e ligação a repositórios técnicos.
           </div>
+        </div>
 
-          <div class="paper-item">
-            <div class="paper-meta">Análise • Inovação</div>
-            <h3>Hidrogénio verde e futuro industrial</h3>
-            <p>
-              Uma reflexão inicial sobre o papel do hidrogénio verde na nova economia energética.
-            </p>
+        <div class="premium-card">
+          <span class="section-kicker">Em destaque</span>
+          <h3>Textos base do portal</h3>
+
+          <div class="paper-list">
+            <div class="paper-item">
+              <div class="paper-meta">Wilson Mendes • Biocombustíveis</div>
+              <h3>Biocombustíveis como segundo petróleo estratégico</h3>
+              <p>
+                Uma leitura sobre a capacidade de Angola ligar energia, agricultura e desenvolvimento rural numa nova lógica de valor.
+              </p>
+            </div>
+
+            <div class="paper-item">
+              <div class="paper-meta">Nota Técnica • Carbono</div>
+              <h3>Mercado de carbono e oportunidades nacionais</h3>
+              <p>
+                Enquadramento das possibilidades institucionais, económicas e climáticas para Angola.
+              </p>
+            </div>
+
+            <div class="paper-item">
+              <div class="paper-meta">Análise • Inovação</div>
+              <h3>Hidrogénio verde e futuro industrial</h3>
+              <p>
+                Uma reflexão inicial sobre o papel do hidrogénio verde na nova economia energética.
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section class="section" id="comunidade">
+    <div class="container">
+      <h2 class="section-title">Comunidade e Comentários</h2>
+      <p class="section-subtitle">
+        Espaço para observações, análises e reacções às ideias publicadas no portal.
+      </p>
+
+      <div class="premium-grid-2">
+        <div class="premium-card">
+          <h3>Deixar comentário</h3>
+          <div class="form-group">
+            <input id="commentName" type="text" placeholder="Seu nome" />
+          </div>
+          <div class="form-group">
+            <textarea id="commentText" placeholder="Escreva o seu comentário"></textarea>
+          </div>
+          <button class="btn btn-primary" onclick="addComment()">Publicar comentário</button>
+        </div>
+
+        <div class="premium-card">
+          <h3>Comentários publicados</h3>
+          <div id="commentsList"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section" id="admin">
     <div class="container">
       <h2 class="section-title">Painel Editorial</h2>
-      <p class="section-text">
-        Aqui podes publicar notícias e artigos diretamente no portal. Neste protótipo, o conteúdo fica guardado no navegador.
+      <p class="section-subtitle">
+        Nesta versão, as notícias e artigos editoriais continuam em modo de protótipo local.
       </p>
 
-      <div class="grid-2">
-        <div class="card">
+      <div class="premium-grid-2">
+        <div class="premium-card">
           <h3>Nova Notícia</h3>
           <div class="form-group">
-            <input id="newsTitle" type="text" placeholder="Título da notícia">
+            <input id="newsTitle" type="text" placeholder="Título da notícia" />
           </div>
           <div class="form-group">
-            <input id="newsCategory" type="text" placeholder="Categoria (ex.: Biocombustíveis)">
+            <input id="newsCategory" type="text" placeholder="Categoria" />
           </div>
           <div class="form-group">
             <textarea id="newsText" placeholder="Resumo da notícia"></textarea>
@@ -1253,16 +1016,16 @@ margin-bottom:20px;
           <button class="btn btn-primary" onclick="addNews()">Publicar notícia</button>
         </div>
 
-        <div class="card">
+        <div class="premium-card">
           <h3>Novo Artigo</h3>
           <div class="form-group">
-            <input id="articleTitle" type="text" placeholder="Título do artigo">
+            <input id="articleTitle" type="text" placeholder="Título do artigo" />
           </div>
           <div class="form-group">
-            <input id="articleAuthor" type="text" placeholder="Autor do artigo">
+            <input id="articleAuthor" type="text" placeholder="Autor do artigo" />
           </div>
           <div class="form-group">
-            <textarea id="articleText" placeholder="Resumo ou introdução do artigo"></textarea>
+            <textarea id="articleText" placeholder="Resumo do artigo"></textarea>
           </div>
           <button class="btn btn-primary" onclick="addArticle()">Publicar artigo</button>
         </div>
@@ -1272,17 +1035,17 @@ margin-bottom:20px;
 
   <section class="section" id="contacto">
     <div class="container">
-      <div class="card" style="text-align:center;">
+      <div class="premium-card" style="text-align:center;">
         <h2 class="section-title">Contacto</h2>
-        <p class="section-text" style="margin-bottom:10px;">
+        <p class="section-subtitle" style="margin-bottom: 10px;">
           O portal pode evoluir para uma plataforma pública nacional de referência sobre transição energética em Angola.
         </p>
 
-        <p><strong>Email:</strong> <a href="mailto:wilsonmendes755@gmail.com" style="color:#8bf4a8;">wilsonmendes755@gmail.com</a></p>
-        <p><strong>WhatsApp:</strong> <a href="https://wa.me/244923716758" target="_blank" rel="noopener noreferrer" style="color:#8bf4a8;">+244 923 716 758</a></p>
+        <p><strong>Email:</strong> <a href="mailto:wilsonmendes755@gmail.com" style="color:#f59e0b;">wilsonmendes755@gmail.com</a></p>
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/244923716758" target="_blank" rel="noopener noreferrer" style="color:#1ecb7b;">+244 923 716 758</a></p>
 
-        <div class="social-links" style="justify-content:center; margin-top:18px;">
-          <a class="social-btn" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+        <div class="social-links" style="justify-content:center;">
+          <a class="social-btn" href="https://www.linkedin.com/in/wilson-mendes-b29a2089/" target="_blank" rel="noopener noreferrer">
             <span class="social-icon">🔗</span>
             <span>LinkedIn</span>
           </a>
@@ -1297,11 +1060,12 @@ margin-bottom:20px;
 
   <footer>
     <div>© 2026 Transição Energética em Angola</div>
-    <div class="footer-links" style="margin-top:8px;">
+    <div class="footer-links">
       <a href="#inicio">Início</a>
       <a href="#noticias">Notícias</a>
-      <a href="#artigos">Artigos</a>
-      <a href="#comunidade">Comunidade</a>
+      <a href="#perfil-especialista">Especialista</a>
+      <a href="#mapa-energetico">Mapa</a>
+      <a href="#artigos-cientificos">Ciência</a>
     </div>
   </footer>
 
@@ -1366,7 +1130,7 @@ margin-bottom:20px;
 
       news.slice().reverse().forEach(item => {
         const div = document.createElement("div");
-        div.className = "card news-card";
+        div.className = "news-card";
         div.innerHTML = `
           <span class="news-tag">${item.category}</span>
           <div class="news-date">${item.date}</div>
@@ -1375,78 +1139,6 @@ margin-bottom:20px;
         `;
         target.appendChild(div);
       });
-    }
-
-    function renderArticles() {
-      const articles = getData("tea_articles", defaultArticles);
-      const target = document.getElementById("articlesList");
-      target.innerHTML = "";
-
-      articles.slice().reverse().forEach(item => {
-        const div = document.createElement("div");
-        div.className = "card news-card";
-        div.innerHTML = `
-          <span class="news-tag">Artigo</span>
-          <div class="news-date">${item.author} • ${item.date}</div>
-          <h3>${item.title}</h3>
-          <p>${item.text}</p>
-        `;
-        target.appendChild(div);
-      });
-    }
-
-    function loadFeed(key, targetId, emptyText) {
-      const items = JSON.parse(localStorage.getItem(key)) || [];
-      const target = document.getElementById(targetId);
-      target.innerHTML = "";
-
-      if (items.length === 0) {
-        target.innerHTML = "<p class='muted'>" + emptyText + "</p>";
-        return;
-      }
-
-      items.slice().reverse().forEach(item => {
-        const div = document.createElement("div");
-        div.className = "feed-item";
-        div.innerHTML = "<strong>" + item.name + "</strong><br><span>" + item.text + "</span><br><span class='muted'>" + item.date + "</span>";
-        target.appendChild(div);
-      });
-    }
-
-    function addComment() {
-      const name = document.getElementById("commentName").value.trim();
-      const text = document.getElementById("commentText").value.trim();
-
-      if (!name || !text) {
-        alert("Preencha o nome e o comentário.");
-        return;
-      }
-
-      const comments = JSON.parse(localStorage.getItem("tea_comments")) || [];
-      comments.push({ name, text, date: new Date().toLocaleString("pt-PT") });
-      saveData("tea_comments", comments);
-
-      document.getElementById("commentName").value = "";
-      document.getElementById("commentText").value = "";
-      loadFeed("tea_comments", "commentsList", "Ainda não há comentários.");
-    }
-
-    function addQuestion() {
-      const name = document.getElementById("questionName").value.trim();
-      const text = document.getElementById("questionText").value.trim();
-
-      if (!name || !text) {
-        alert("Preencha o nome e a pergunta.");
-        return;
-      }
-
-      const questions = JSON.parse(localStorage.getItem("tea_questions")) || [];
-      questions.push({ name, text, date: new Date().toLocaleString("pt-PT") });
-      saveData("tea_questions", questions);
-
-      document.getElementById("questionName").value = "";
-      document.getElementById("questionText").value = "";
-      loadFeed("tea_questions", "questionsList", "Ainda não há perguntas.");
     }
 
     function addNews() {
@@ -1496,21 +1188,80 @@ margin-bottom:20px;
       document.getElementById("articleTitle").value = "";
       document.getElementById("articleAuthor").value = "";
       document.getElementById("articleText").value = "";
-      renderArticles();
+      alert("Artigo guardado no navegador.");
     }
 
     renderNews();
-    renderArticles();
-    loadFeed("tea_comments", "commentsList", "Ainda não há comentários.");
-    loadFeed("tea_questions", "questionsList", "Ainda não há perguntas.");
   </script>
+
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    const supabaseUrl = "https://fgqrqihtcozqeklddwmc.supabase.co";
+    const supabaseKey = "sb_publishable_44_JfRSxO15f1fedfvIcxQ_mXYVLgDd";
+    const sbClient = window.supabase.createClient(supabaseUrl, supabaseKey);
 
-<script>
-const supabaseUrl = "https://fgqrqihtcozqeklddwmc.supabase.co"
-const supabaseKey = "sb_publishable_44_JfRSxO15f1fedfvIcxQ_mXYVLgDd"
+    async function loadComments() {
+      const target = document.getElementById("commentsList");
+      if (!target) return;
 
-const supabase = window.supabase.createClient(supabaseUrl, supabaseKey)
-</script>
+      const { data, error } = await sbClient
+        .from("comments")
+        .select("*")
+        .order("created_at", { ascending: false });
+
+      if (error) {
+        target.innerHTML = "<p class='muted'>Erro ao carregar comentários.</p>";
+        console.error(error);
+        return;
+      }
+
+      if (!data || data.length === 0) {
+        target.innerHTML = "<p class='muted'>Ainda não há comentários.</p>";
+        return;
+      }
+
+      target.innerHTML = "";
+      data.forEach(item => {
+        const div = document.createElement("div");
+        div.className = "feed-item";
+        div.innerHTML = `
+          <strong>${item.name ?? "Anónimo"}</strong><br>
+          <span>${item.text ?? ""}</span><br>
+          <span class="muted">${new Date(item.created_at).toLocaleString("pt-PT")}</span>
+        `;
+        target.appendChild(div);
+      });
+    }
+
+    async function addComment() {
+      const nameInput = document.getElementById("commentName");
+      const textInput = document.getElementById("commentText");
+
+      const name = nameInput.value.trim();
+      const text = textInput.value.trim();
+
+      if (!name || !text) {
+        alert("Preencha o nome e o comentário.");
+        return;
+      }
+
+      const { error } = await sbClient
+        .from("comments")
+        .insert([{ name, text }]);
+
+      if (error) {
+        alert("Erro ao publicar comentário.");
+        console.error(error);
+        return;
+      }
+
+      nameInput.value = "";
+      textInput.value = "";
+      await loadComments();
+      alert("Comentário publicado com sucesso.");
+    }
+
+    loadComments();
+  </script>
 </body>
 </html>
