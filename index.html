@@ -579,6 +579,182 @@ margin-top:80px;
 font-size:32px;
 margin-bottom:20px;
 }
+    .expert-section,
+.energy-map-section,
+.science-section,
+.strategy-section {
+  padding: 78px 0;
+}
+
+.premium-intro {
+  text-align: center;
+  max-width: 920px;
+  margin: 0 auto 30px;
+  color: #dbeafe;
+  font-size: 17px;
+}
+
+.premium-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.premium-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 22px;
+  padding: 26px;
+  box-shadow: 0 14px 36px rgba(0,0,0,0.20);
+}
+
+.premium-card h3 {
+  margin-bottom: 12px;
+}
+
+.premium-card p {
+  color: #dbeafe;
+  font-size: 15px;
+  margin-bottom: 14px;
+}
+
+.section-kicker {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  background: rgba(139,244,168,0.12);
+  color: #9cf7bc;
+  border: 1px solid rgba(156,247,188,0.18);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.expert-layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 26px;
+  align-items: center;
+}
+
+.expert-photo-large {
+  width: 100%;
+  max-width: 360px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 24px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.28);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.expert-tags,
+.strategy-tags,
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.tag-pill {
+  display: inline-block;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  background: rgba(139,244,168,0.12);
+  color: #9cf7bc;
+  border: 1px solid rgba(156,247,188,0.18);
+}
+
+.map-visual-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.map-node {
+  padding: 18px 16px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  min-height: 120px;
+}
+
+.map-node strong {
+  display: block;
+  color: #8bf4a8;
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+.paper-list {
+  display: grid;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.paper-item {
+  padding: 18px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.paper-meta {
+  font-size: 13px;
+  color: #a8c8d8;
+  margin-bottom: 8px;
+}
+
+.stat-line {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.stat-box {
+  padding: 16px;
+  border-radius: 18px;
+  text-align: center;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.stat-box strong {
+  display: block;
+  color: #8bf4a8;
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+.mini-note {
+  margin-top: 16px;
+  color: #b7d4e4;
+  font-size: 14px;
+}
+
+.premium-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.16), transparent);
+  margin: 10px 0 0;
+}
+
+.footer-links a:hover,
+.nav-links a:hover {
+  text-shadow: 0 0 14px rgba(139,244,168,0.35);
+}
+
+@media (max-width: 950px) {
+  .premium-grid-2,
+  .expert-layout,
+  .map-visual-grid,
+  .stat-line {
+    grid-template-columns: 1fr;
+  }
+}
   </style>
 </head>
 <body>
@@ -588,9 +764,14 @@ margin-bottom:20px;
     <div class="container">
       <div>Plataforma angolana de reflexão, informação e debate sobre o futuro energético nacional.</div>
       <div>
-        <a href="#sobre-wilson">Sobre o autor</a> ·
-        <a href="#livro">Livro em destaque</a>
-      </div>
+        <div>
+  <a href="#sobre-wilson">Sobre o autor</a>
+  <a href="#livro">Livro em destaque</a>
+  <a href="#linhas-estrategicas">Estratégia</a>
+  <a href="#perfil-especialista">Especialista</a>
+  <a href="#mapa-energetico">Mapa</a>
+  <a href="#artigos-cientificos">Ciência</a>
+</div>
     </div>
   </div>
 
@@ -828,7 +1009,228 @@ margin-bottom:20px;
       </div>
     </div>
   </section>
+<section class="strategy-section" id="linhas-estrategicas">
+  <div class="container">
+    <h2 class="section-title">Linhas Estratégicas para Angola</h2>
+    <p class="premium-intro">
+      A transição energética angolana não deve ser pensada como ruptura cega, mas como
+      evolução inteligente: preservar valor, diversificar a economia e construir novas
+      cadeias de desenvolvimento com identidade nacional.
+    </p>
 
+    <div class="premium-grid-2">
+      <div class="premium-card">
+        <span class="section-kicker">Visão Estratégica</span>
+        <h3>Do petróleo ao futuro integrado</h3>
+        <p>
+          Angola pode transformar a sua experiência em petróleo e gás numa base de força
+          para entrar com mais maturidade nos mercados do carbono, dos biocombustíveis,
+          das energias renováveis e da indústria verde.
+        </p>
+        <div class="strategy-tags">
+          <span class="tag-pill">Diversificação</span>
+          <span class="tag-pill">Descarbonização</span>
+          <span class="tag-pill">Indústria</span>
+          <span class="tag-pill">Soberania</span>
+        </div>
+      </div>
+
+      <div class="premium-card">
+        <span class="section-kicker">Prioridades</span>
+        <h3>Quatro eixos de construção</h3>
+        <p>• energia com valor económico</p>
+        <p>• agricultura ligada à bioenergia</p>
+        <p>• mercado de carbono com credibilidade</p>
+        <p>• formação técnica para novas gerações</p>
+        <div class="mini-note">
+          O futuro energético não se improvisa. Estrutura-se, regula-se e executa-se.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="expert-section" id="perfil-especialista">
+  <div class="container">
+    <h2 class="section-title">Perfil do Especialista</h2>
+    <p class="premium-intro">
+      Uma liderança técnica voltada para energia, geociências e desenvolvimento sustentável,
+      com foco na construção de caminhos concretos para Angola.
+    </p>
+
+    <div class="premium-card expert-layout">
+      <div>
+        <img src="_MSS7974.jpg" alt="Wilson Mendes" class="expert-photo-large" />
+      </div>
+
+      <div>
+        <span class="section-kicker">Especialista</span>
+        <h3>Wilson Mendes</h3>
+        <p>
+          Geólogo e especialista em transição energética e biocombustíveis, com trabalho
+          orientado para descarbonização, integração energética, inovação e visão estratégica.
+        </p>
+        <p>
+          A sua actuação cruza ciência, planeamento e compromisso nacional, defendendo que
+          Angola deve ocupar um lugar activo nas decisões que moldam o futuro da energia.
+        </p>
+        <p>
+          Este portal funciona como espaço de reflexão, debate técnico e divulgação pública
+          sobre energia, clima, mercado de carbono, biocombustíveis e novas oportunidades
+          para o país.
+        </p>
+
+        <div class="expert-tags">
+          <span class="tag-pill">Geociências</span>
+          <span class="tag-pill">Biocombustíveis</span>
+          <span class="tag-pill">Mercado de Carbono</span>
+          <span class="tag-pill">Descarbonização</span>
+          <span class="tag-pill">Transição Energética</span>
+        </div>
+
+        <div class="social-links">
+          <a class="social-btn" href="https://www.linkedin.com/in/wilson-mendes-b29a2089/" target="_blank" rel="noopener noreferrer">
+            <span class="social-icon">🔗</span>
+            <span>LinkedIn</span>
+          </a>
+          <a class="social-btn" href="https://wa.me/244923716758" target="_blank" rel="noopener noreferrer">
+            <span class="social-icon">📱</span>
+            <span>WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="energy-map-section" id="mapa-energetico">
+  <div class="container">
+    <h2 class="section-title">Mapa Energético de Angola</h2>
+    <p class="premium-intro">
+      Uma leitura estratégica do país como sistema energético em transformação, onde
+      território, recursos, ciência e política pública precisam conversar.
+    </p>
+
+    <div class="premium-grid-2">
+      <div class="premium-card">
+        <span class="section-kicker">Leitura Territorial</span>
+        <h3>Principais frentes energéticas</h3>
+        <div class="map-visual-grid">
+          <div class="map-node">
+            <strong>Offshore e Onshore</strong>
+            Produção petrolífera, gás natural, infraestruturas e bacias sedimentares estratégicas.
+          </div>
+          <div class="map-node">
+            <strong>Corredor Solar</strong>
+            Expansão de soluções renováveis, mini-redes e produção distribuída.
+          </div>
+          <div class="map-node">
+            <strong>Bioenergia</strong>
+            Potencial para etanol, biomassa, cadeias agrícolas e desenvolvimento rural.
+          </div>
+          <div class="map-node">
+            <strong>Nova Economia</strong>
+            Hidrogénio verde, créditos de carbono e novos fluxos de investimento sustentável.
+          </div>
+        </div>
+      </div>
+
+      <div class="premium-card">
+        <span class="section-kicker">Integração</span>
+        <h3>Energia, território e futuro</h3>
+        <p>
+          O mapa energético de Angola já não pode ser lido apenas pela lente tradicional.
+          É preciso cruzar petróleo, gás, renováveis, agricultura, clima e indústria numa
+          estratégia integrada.
+        </p>
+        <p>
+          Numa fase seguinte, esta área pode evoluir para um mapa interactivo com projectos,
+          localizações-chave e corredores de desenvolvimento energético.
+        </p>
+
+        <div class="stat-line">
+          <div class="stat-box">
+            <strong>4</strong>
+            Frentes
+          </div>
+          <div class="stat-box">
+            <strong>1</strong>
+            Visão nacional
+          </div>
+          <div class="stat-box">
+            <strong>100%</strong>
+            Foco estratégico
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="science-section" id="artigos-cientificos">
+  <div class="container">
+    <h2 class="section-title">Artigos Científicos</h2>
+    <p class="premium-intro">
+      Uma área pensada para textos técnicos, análises especializadas e reflexões com base
+      científica sobre energia, clima e desenvolvimento sustentável em Angola.
+    </p>
+
+    <div class="premium-grid-2">
+      <div class="premium-card">
+        <span class="section-kicker">Publicações</span>
+        <h3>Linhas científicas prioritárias</h3>
+        <p>
+          Esta secção acolhe conteúdos mais estruturados, incluindo notas técnicas,
+          ensaios especializados, reflexões estratégicas e textos de base científica.
+        </p>
+
+        <div class="paper-tags">
+          <span class="tag-pill">GHG</span>
+          <span class="tag-pill">Biocombustíveis</span>
+          <span class="tag-pill">Carbono</span>
+          <span class="tag-pill">Hidrogénio Verde</span>
+          <span class="tag-pill">Política Energética</span>
+        </div>
+
+        <div class="mini-note">
+          Em fase seguinte, esta área poderá incluir PDF, DOI, anexos e ligação a repositórios técnicos.
+        </div>
+      </div>
+
+      <div class="premium-card">
+        <span class="section-kicker">Em Destaque</span>
+        <h3>Textos base do portal</h3>
+
+        <div class="paper-list">
+          <div class="paper-item">
+            <div class="paper-meta">Wilson Mendes • Biocombustíveis</div>
+            <h3>Biocombustíveis como segundo petróleo estratégico</h3>
+            <p>
+              Uma leitura sobre a capacidade de Angola ligar energia, agricultura e desenvolvimento
+              rural numa nova lógica de valor.
+            </p>
+          </div>
+
+          <div class="paper-item">
+            <div class="paper-meta">Nota Técnica • Carbono</div>
+            <h3>Mercado de carbono e oportunidades nacionais</h3>
+            <p>
+              Enquadramento das possibilidades institucionais, económicas e climáticas para Angola.
+            </p>
+          </div>
+
+          <div class="paper-item">
+            <div class="paper-meta">Análise • Inovação</div>
+            <h3>Hidrogénio verde e futuro industrial</h3>
+            <p>
+              Uma reflexão inicial sobre o papel do hidrogénio verde na nova economia energética.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
   <section class="section" id="admin">
     <div class="container">
       <h2 class="section-title">Painel Editorial</h2>
