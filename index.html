@@ -177,16 +177,69 @@
       font-size:13px;
     }
 
-   .hero{
+ .hero{
   min-height:88vh;
   display:flex;
   align-items:center;
   position:relative;
   overflow:hidden;
-  background:
-    linear-gradient(rgba(6,14,25,0.38), rgba(6,14,25,0.62)),
-    url("fundo-hero-energia.png") center center/cover no-repeat;
   border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(rgba(6,14,25,0.34), rgba(6,14,25,0.60)),
+    linear-gradient(90deg, rgba(6,14,25,0.78) 0%, rgba(6,14,25,0.50) 38%, rgba(6,14,25,0.18) 68%, rgba(6,14,25,0.32) 100%);
+  z-index:1;
+}
+
+.hero-bg{
+  position:absolute;
+  inset:0;
+  background:url("fundo-hero-energia.png") center center/cover no-repeat;
+  transform:scale(1.03);
+  animation:heroZoom 18s ease-in-out infinite alternate;
+  z-index:0;
+}
+
+@keyframes heroZoom{
+  0%{
+    transform:scale(1.03) translateY(0px);
+  }
+  100%{
+    transform:scale(1.10) translateY(-6px);
+  }
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(rgba(6,14,25,0.34), rgba(6,14,25,0.60)),
+    linear-gradient(90deg, rgba(6,14,25,0.78) 0%, rgba(6,14,25,0.50) 38%, rgba(6,14,25,0.18) 68%, rgba(6,14,25,0.32) 100%);
+  z-index:1;
+}
+
+.hero-bg{
+  position:absolute;
+  inset:0;
+  background:url("fundo-hero-energia.png") center center/cover no-repeat;
+  transform:scale(1.03);
+  animation:heroZoom 18s ease-in-out infinite alternate;
+  z-index:0;
+}
+
+@keyframes heroZoom{
+  0%{
+    transform:scale(1.03) translateY(0px);
+  }
+  100%{
+    transform:scale(1.10) translateY(-6px);
+  }
 }
 
  .hero::before{
@@ -246,7 +299,7 @@
       }
     }
 
-    .hero-content{
+ .hero-content{
   padding:90px 0 80px;
   max-width:760px;
   position:relative;
@@ -275,6 +328,7 @@
   font-weight:800;
   max-width:700px;
   text-transform:uppercase;
+  text-shadow:0 8px 24px rgba(0,0,0,0.28);
 }
 
     .hero h1 span{
@@ -830,22 +884,11 @@
       }
     }
 
-    @media (max-width:950px){
-      .premium-grid-2,
-      .grid-3,
-      .hero-book,
-      .expert-layout,
-      .map-visual-grid,
-      .stat-line,
-      .hero-mini-stats,
-      .partners-grid,
-      .footer-top{
-        grid-template-columns:1fr;
-      }
-
-      .hero h1{
-        font-size:42px;
-      }
+   @media (max-width:950px){
+  .hero h1{
+    font-size:46px;
+  }
+}
 
       .hero{
         min-height:auto;
@@ -888,6 +931,65 @@
         font-size:30px;
       }
     }
+    .hero-light{
+  position:absolute;
+  inset:0;
+  z-index:2;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 8% 22%, rgba(245,158,11,0.30), transparent 18%),
+    radial-gradient(circle at 75% 18%, rgba(255,255,255,0.08), transparent 16%),
+    radial-gradient(circle at 82% 70%, rgba(30,203,123,0.10), transparent 20%);
+  mix-blend-mode:screen;
+  animation:lightPulse 7s ease-in-out infinite alternate;
+}
+
+@keyframes lightPulse{
+  0%{
+    opacity:0.75;
+    transform:scale(1);
+  }
+  100%{
+    opacity:1;
+    transform:scale(1.03);
+  }
+}
+
+.hero-spark{
+  position:absolute;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:rgba(255,240,200,0.85);
+  box-shadow:0 0 14px rgba(255,220,140,0.45);
+  z-index:2;
+  animation:floatSpark linear infinite;
+  opacity:0;
+}
+
+.hero-spark:nth-child(1){left:10%; bottom:12%; animation-duration:11s; animation-delay:0s;}
+.hero-spark:nth-child(2){left:18%; bottom:20%; animation-duration:9s; animation-delay:2s;}
+.hero-spark:nth-child(3){left:32%; bottom:14%; animation-duration:13s; animation-delay:1s;}
+.hero-spark:nth-child(4){left:58%; bottom:18%; animation-duration:10s; animation-delay:4s;}
+.hero-spark:nth-child(5){left:72%; bottom:10%; animation-duration:12s; animation-delay:1s;}
+.hero-spark:nth-child(6){left:84%; bottom:22%; animation-duration:8s; animation-delay:3s;}
+
+@keyframes floatSpark{
+  0%{
+    transform:translateY(0) scale(0.8);
+    opacity:0;
+  }
+  20%{
+    opacity:0.7;
+  }
+  80%{
+    opacity:0.35;
+  }
+  100%{
+    transform:translateY(-180px) translateX(10px) scale(1.2);
+    opacity:0;
+  }
+}
   </style>
 </head>
 <body>
@@ -934,18 +1036,15 @@
   </header>
 
   <section class="hero" id="inicio">
-    <div class="particles">
-      <span class="particle"></span>
-      <span class="particle"></span>
-      <span class="particle"></span>
-      <span class="particle"></span>
-      <span class="particle"></span>
-      <span class="particle"></span>
-      <span class="particle"></span>
-      <span class="particle"></span>
-      <span class="particle"></span>
-      <span class="particle"></span>
-    </div>
+    <div class="hero-bg"></div>
+<div class="hero-light"></div>
+
+<span class="hero-spark"></span>
+<span class="hero-spark"></span>
+<span class="hero-spark"></span>
+<span class="hero-spark"></span>
+<span class="hero-spark"></span>
+<span class="hero-spark"></span>
 
     <div class="container">
       <div class="hero-content">
